@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://cherenko2007.github.io/sitemap.xml
+Host: https://cherenko2007.github.io
