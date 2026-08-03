@@ -30,12 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
         revealObserver.observe(el);
     });
 
-    // CSS-класс для revealed элементов
     const style = document.createElement('style');
     style.textContent = '.revealed { opacity: 1 !important; transform: translateY(0) !important; }';
     document.head.appendChild(style);
 
-    /* --- 2. Плавная прокрутка для навигации --- */
+    /* --- 2. Плавная прокрутка + подсветка при клике --- */
+    let isClickScrolling = false;
+    let clickScrollTimeout;
+
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -43,6 +45,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
+                    // Подсвечиваем нажатый пункт сразу
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Блокируем скролл-хайлайт на время прокрутки
+                    isClickScrolling = true;
+                    clearTimeout(clickScrollTimeout);
+                    clickScrollTimeout = setTimeout(() => {
+                        isClickScrolling = false;
+                    }, 1200);
+
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
@@ -54,14 +67,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
 
     function highlightNav() {
+        if (isClickScrolling) return;
+
         let current = '';
+        const scrollPos = window.scrollY + 180;
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 150)) {
+            if (scrollPos >= sectionTop) {
                 current = section.getAttribute('id');
             }
         });
+
+        // Если в самом верху — подсвечиваем Главная
+        if (!current && window.scrollY < 100) {
+            current = 'home';
+        }
 
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -131,13 +152,11 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         document.head.appendChild(burgerStyle);
 
-        // Переключение меню
         burger.addEventListener('click', () => {
             navbar.classList.toggle('open');
             burger.innerHTML = navbar.classList.contains('open') ? '✕' : '☰';
         });
 
-        // Закрытие меню при клике на ссылку
         navbar.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navbar.classList.remove('open');
@@ -146,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* --- 6. Эффект при наведении на пункты меню --- */
+    /* --- 6. Hover-эффект на пунктах меню --- */
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('mouseenter', function () {
             if (!this.classList.contains('active')) {
