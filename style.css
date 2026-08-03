@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    КРАСИВА — Студия эстетики
    Основной файл стилей
    ============================================ */
@@ -382,10 +382,31 @@ a {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 200px 200px;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковые */
     gap: 16px;
 }
+
+.gallery-item {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    aspect-ratio: 3 / 4; /* вертикальные пропорции (портрет) */
+}
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+/* Убираем большую картинку — теперь все одинаковые */
+.gallery-item-large {
+    grid-row: span 1;
+    aspect-ratio: 3 / 4;
+}
+
 
 .gallery-item {
     border-radius: var(--radius-sm);
