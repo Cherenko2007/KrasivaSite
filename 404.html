@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена — КРАСИВА</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.PNG">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f5ebe0 0%, #e8ddd0 50%, #dccfb8 100%);
+        }
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            color: #6b5b4f;
+            line-height: 1;
+            margin-bottom: 10px;
+            opacity: 0.3;
+        }
+        .error-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #4a3f35;
+            margin-bottom: 16px;
+        }
+        .error-text {
+            font-size: 15px;
+            color: #7a6e62;
+            margin-bottom: 32px;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Страница не найдена</h1>
+        <p class="error-text">Кажется, вы забрели не туда. Но красота спасет мир — вернитесь на главную.</p>
+        <a href="index.html" class="btn btn-primary">На главную</a>
+    </div>
+</body>
+</html>
