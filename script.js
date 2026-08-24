@@ -176,6 +176,24 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.transform = '';
         });
     });
+    /* --- 7. Кнопка «Наверх» --- */
+    const scrollTopBtn = document.createElement('button');
+    scrollTopBtn.className = 'scroll-top';
+    scrollTopBtn.innerHTML = '↑';
+    scrollTopBtn.setAttribute('aria-label', 'Наверх');
+    document.body.appendChild(scrollTopBtn);
 
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+   
     console.log('✨ КРАСИВА — сайт загружен!');
 });
