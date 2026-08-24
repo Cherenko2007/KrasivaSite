@@ -868,6 +868,79 @@ a {
     .cta-title {
         font-size: 24px;
     }
+   /* --- КАРТА --- */
+.map-container {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(107, 91, 79, 0.08);
+}
+
+/* --- КНОПКА НАВЕРХ --- */
+.scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background: #6b5b4f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(107, 91, 79, 0.25);
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: #4a3f35;
+    transform: translateY(-2px);
+}
+
+/* --- МОБИЛЬНАЯ КНОПКА ЗАПИСАТЬСЯ --- */
+.mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #6b5b4f;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    z-index: 100;
+    box-shadow: 0 -4px 12px rgba(107, 91, 79, 0.15);
+    transition: all 0.3s ease;
+}
+
+.mobile-cta:hover {
+    background: #4a3f35;
+}
+
+@media (max-width: 768px) {
+    .mobile-cta {
+        display: block;
+    }
+    .footer {
+        padding-bottom: 80px;
+    }
+}
 
     .gallery-item {
         aspect-ratio: 1 / 1;
