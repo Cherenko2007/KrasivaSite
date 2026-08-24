@@ -404,37 +404,40 @@ a {
 
 /* --- ВИДЕО В ГАЛЕРЕЕ --- */
 .gallery-grid.video-grid {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    flex-wrap: wrap;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+    grid-template-columns: none !important;
 }
 
 .gallery-grid.video-grid .gallery-item {
-    width: 280px;
-    height: 500px;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    flex-shrink: 0;
+    width: 280px !important;
+    height: 500px !important;
+    aspect-ratio: auto !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 12px rgba(107, 91, 79, 0.08) !important;
+    flex-shrink: 0 !important;
+    background: transparent !important;
 }
 
 .gallery-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
 }
 
 @media (max-width: 768px) {
     .gallery-grid.video-grid {
-        gap: 16px;
+        gap: 16px !important;
     }
     .gallery-grid.video-grid .gallery-item {
-        width: 100%;
-        max-width: 320px;
-        height: 520px;
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 520px !important;
     }
 }
 /* --- УСЛУГИ --- */
