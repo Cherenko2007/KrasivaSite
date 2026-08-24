@@ -915,17 +915,18 @@ a {
 .mobile-cta {
     display: none;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 24px;
+    left: 16px;
+    width: 33.333%;
     background: #6b5b4f;
     color: #fff;
     text-align: center;
-    padding: 16px;
-    font-size: 15px;
+    padding: 14px 10px;
+    font-size: 14px;
     font-weight: 500;
+    border-radius: 24px;
     z-index: 100;
-    box-shadow: 0 -4px 12px rgba(107, 91, 79, 0.15);
+    box-shadow: 0 4px 16px rgba(107, 91, 79, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -936,13 +937,5 @@ a {
 @media (max-width: 768px) {
     .mobile-cta {
         display: block;
-    }
-    .footer {
-        padding-bottom: 80px;
-    }
-}
-
-    .gallery-item {
-        aspect-ratio: 1 / 1;
     }
 }
