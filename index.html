@@ -35,14 +35,143 @@
     
     <link rel="stylesheet" href="style.css?v=5">
     
-    <!-- Schema.org -->
+    <!-- Schema.org WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "КРАСИВА - Студия эстетики",
+      "url": "https://krasiva-kirov.ru/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://krasiva-kirov.ru/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema.org Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Главная",
+        "item": "https://krasiva-kirov.ru/"
+      }]
+    }
+    </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как записаться на массаж в Кирове?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Записаться можно через Instagram @natamirmat или ВКонтакте. Работаю по предварительной записи по адресу: г. Киров, ул. Никитская, д. 146."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит аппаратный массаж?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Аппаратный массаж на всё тело стоит 2 200 ₽. При оплате курса из 11 сеансов — 16 000 ₽ (1 сеанс в подарок)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли противопоказания к массажу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, существуют противопоказания: острые воспалительные процессы, онкология, тромбоз, беременность в некоторых сроках. Перед первым сеансом мастер проведёт консультацию."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое техника блейдд?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Блейдд техника — это глубокая проработка fascia и мышечных слоёв специальным инструментом. Помогает при хронических зажимах и для коррекции фигуры. Стоимость — 2 500 ₽."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Аппаратный массаж на всё тело",
+            "description": "Глубокое воздействие на ткани с помощью профессионального аппарата. Убирает застой лимфы, уменьшает объёмы, подтягивает кожу.",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2200", "priceCurrency": "RUB" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Классический массаж",
+            "description": "Ручной массаж всего тела для расслабления мышц, улучшения кровообращения и снятия стресса.",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2200", "priceCurrency": "RUB" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Антицеллюлитный массаж",
+            "description": "Комплексная работа с проблемными зонами. Разбивает жировые отложения, выводит лишнюю жидкость, разглаживает «апельсиновую корку».",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2200", "priceCurrency": "RUB" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Блейдд техника",
+            "description": "Работа специальным инструментом для глубокой проработки fascia и мышечных слоёв.",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2500", "priceCurrency": "RUB" }
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org LocalBusiness + Reviews -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "КРАСИВА - Студия эстетики",
       "description": "Профессиональный массаж в Кирове. Аппаратный, классический, антицеллюлитный массаж и техника блейдд.",
-     "url": "https://krasiva-kirov.ru/",
+      "url": "https://krasiva-kirov.ru/",
       "image": "https://krasiva-kirov.ru/natalya-portrait.jpg",
       "address": {
         "@type": "PostalAddress",
@@ -52,6 +181,35 @@
       },
       "priceRange": "1400-2500 RUB",
       "openingHours": "Mo-Su 09:00-21:00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "7",
+        "bestRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Похудеть с помощью аппаратного массажа я уже не планировала, но массаж Натальи реально работает! Живот ушёл, ноги реально похудели.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-06-15"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Утром встала на весы — минус 1,5 кг. Я счастлива! И шорты стали свободными.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-06-12"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Массаж реально приносит результат, кожа подтягивается, заметно улучшается её качество и внешний вид. Наталья волшебница!",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-05-30"
+        }
+      ],
       "sameAs": [
         "https://www.instagram.com/natamirmat",
         "https://vk.ru/id578712934"
@@ -59,18 +217,16 @@
     }
     </script>
     
-    <!-- Google Analytics 4 (замените G-XXXXXXXXXX на свой ID) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXN6LR2YHV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-JXN6LR2YHV');
     </script>
-    -->
     
-       <!-- Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -109,7 +265,7 @@
         <!-- ГЕРОЙ-БЛОК -->
         <section class="hero">
             <div class="hero-content">
-                <h2 class="hero-title">Профессиональный массаж в Кирове</h2>
+                <h2 class="hero-title">Профессиональный массаж в Кирове — студия КРАСИВА</h2>
                 <p class="hero-text">
                     Студия эстетики «КРАСИВА» - место, где забота о теле сочетается с уютной атмосферой. 
                     Наталья поможет вам расслабиться, снять напряжение и подарить коже здоровый вид.
@@ -183,12 +339,12 @@
                 <h2 class="section-title">Наша студия</h2>
                 <div class="gallery-grid video-grid">
                     <div class="gallery-item">
-                        <video autoplay muted loop playsinline preload="metadata" poster="natalya-portrait.jpg">
+                        <video autoplay muted loop playsinline preload="metadata" poster="natalya-portrait.jpg" aria-label="Видео процесса массажа в студии КРАСИВА">
                             <source src="massage-demo.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="gallery-item">
-                        <video autoplay muted loop playsinline preload="metadata" poster="natalya-portrait.jpg">
+                        <video autoplay muted loop playsinline preload="metadata" poster="natalya-portrait.jpg" aria-label="Видео студии эстетики КРАСИВА в Кирове">
                             <source src="studio-process.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -199,7 +355,7 @@
         <!-- УСЛУГИ -->
         <section class="section services-section" id="services">
             <div class="container">
-                <h2 class="section-title">Услуги и цены</h2>
+                <h2 class="section-title">Услуги и цены на массаж в Кирове</h2>
                 
                 <!-- Акция -->
                 <div class="promo-banner">
@@ -296,7 +452,7 @@
         <!-- ОТЗЫВЫ -->
         <section class="section reviews-section" id="reviews">
             <div class="container">
-                <h2 class="section-title">Отзывы клиентов</h2>
+                <h2 class="section-title">Отзывы клиентов о массаже</h2>
                 
                 <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">
                     ✍️ Оставить отзыв в Instagram
