@@ -713,6 +713,40 @@ a {
     margin-right: auto;
 }
 
+/* --- КНОПКИ ОТЗЫВОВ --- */
+.review-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.review-buttons .review-btn {
+    margin-bottom: 0;
+    flex: 1 1 220px;
+    max-width: 320px;
+}
+
+.review-btn-yandex {
+    background: linear-gradient(135deg, #fc3f1d, #ff6b35) !important;
+}
+
+.review-btn-yandex:hover {
+    background: linear-gradient(135deg, #e03510, #e85a20) !important;
+}
+
+@media (max-width: 768px) {
+    .review-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .review-buttons .review-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 /* --- ФУТЕР --- */
 .footer {
     background: linear-gradient(135deg, #f5ebe0 0%, #e8ddd0 50%, #dccfb8 100%);
@@ -869,7 +903,9 @@ a {
     .cta-title {
         font-size: 24px;
     }
-   /* --- КАРТА --- */
+}
+
+/* --- КАРТА --- */
 .map-container {
     border-radius: 16px;
     overflow: hidden;
