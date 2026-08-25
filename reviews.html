@@ -13,7 +13,7 @@
     </script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Отзывы клиентов студии эстетики КРАСИВА в Кирове. Реальные результаты массажа от Натальи Мурадян.">
+    <meta name="description" content="Отзывы клиентов студии эстетики КРАСИВА в Кирове. Реальные результаты массажа от Наталии Мурадян.">
     <title>Отзывы — КРАСИВА | Студия эстетики</title>
     <link rel="canonical" href="https://krasiva-kirov.ru/reviews.html">
     <meta name="keywords" content="отзывы массаж киров, массажист киров отзывы, антицеллюлитный массаж отзывы, аппаратный массаж результат">
@@ -28,6 +28,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .review-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+        .review-buttons .review-btn {
+            margin-bottom: 0;
+            flex: 1 1 220px;
+            max-width: 320px;
+        }
+        .review-btn-yandex {
+            background: linear-gradient(135deg, #fc3f1d, #ff6b35) !important;
+        }
+        .review-btn-yandex:hover {
+            background: linear-gradient(135deg, #e03510, #e85a20) !important;
+        }
+    </style>
 
     <!-- Breadcrumbs Schema.org -->
     <script type="application/ld+json">
@@ -111,10 +132,15 @@
         <!-- ОТЗЫВЫ -->
         <section class="section">
             <div class="container">
-                <!-- Кнопка оставить отзыв -->
-                <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">
-                    ✍️ Оставить отзыв в Instagram
-                </a>
+                <!-- Кнопки оставить отзыв -->
+                <div class="review-buttons">
+                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">
+                        ✍️ Оставить отзыв в Instagram
+                    </a>
+                    <a href="https://yandex.ru/maps/org/krasiva/133185545034?si=py49vbf8kgh35bvyn9uby3wkgm" target="_blank" rel="noopener noreferrer" class="review-btn review-btn-yandex">
+                        🗺️ Оставить отзыв на Яндекс.Картах
+                    </a>
+                </div>
 
                 <!-- Карточки отзывов -->
                 <div class="review-card">
