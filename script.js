@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.nav-container');
     const nav = document.querySelector('.navbar');
 
-    if (navbar && window.innerWidth <= 768) {
+    if (navbar) {
         const burger = document.createElement('button');
         burger.className = 'nav-burger';
         burger.innerHTML = '☰';
@@ -194,6 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-   
+
     console.log('✨ КРАСИВА — сайт загружен!');
 });
