@@ -43,6 +43,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -51,6 +53,10 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 img {
@@ -432,6 +438,8 @@ a {
 
 @media (max-width: 768px) {
     .gallery-grid.video-grid {
+        flex-direction: column !important;
+        align-items: center !important;
         gap: 16px !important;
     }
     .gallery-grid.video-grid .gallery-item {
@@ -782,6 +790,77 @@ a {
     opacity: 0.8;
 }
 
+/* --- КАРТА --- */
+.map-container {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(107, 91, 79, 0.08);
+}
+
+.map-container iframe {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- КНОПКА НАВЕРХ --- */
+.scroll-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background: #6b5b4f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(107, 91, 79, 0.25);
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: #4a3f35;
+    transform: translateY(-2px);
+}
+
+/* --- МОБИЛЬНАЯ КНОПКА ЗАПИСАТЬСЯ --- */
+.mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    left: 16px;
+    width: 33.333%;
+    background: #6b5b4f;
+    color: #fff;
+    text-align: center;
+    padding: 14px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 24px;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(107, 91, 79, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mobile-cta:hover {
+    background: #4a3f35;
+}
+
 /* --- АДАПТИВНОСТЬ --- */
 @media (max-width: 768px) {
     .logo-title {
@@ -792,10 +871,11 @@ a {
     .nav-container {
         gap: 4px;
         padding: 10px 12px;
+        flex-wrap: wrap;
     }
 
     .nav-link {
-        padding: 8px 14px;
+        padding: 8px 12px;
         font-size: 13px;
     }
 
@@ -884,9 +964,18 @@ a {
         width: 100%;
         max-width: 100%;
     }
+
+    .mobile-cta {
+        display: block;
+    }
 }
 
 @media (max-width: 480px) {
+    .nav-link {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -902,77 +991,5 @@ a {
 
     .cta-title {
         font-size: 24px;
-    }
-}
-
-/* --- КАРТА --- */
-.map-container {
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 12px rgba(107, 91, 79, 0.08);
-}
-
-/* --- КНОПКА НАВЕРХ --- */
-.scroll-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 48px;
-    height: 48px;
-    background: #6b5b4f;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(107, 91, 79, 0.25);
-    z-index: 90;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.scroll-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.scroll-top:hover {
-    background: #4a3f35;
-    transform: translateY(-2px);
-}
-
-/* --- МОБИЛЬНАЯ КНОПКА ЗАПИСАТЬСЯ --- */
-.mobile-cta {
-    display: none;
-    position: fixed;
-    bottom: 24px;
-    left: 16px;
-    width: 33.333%;
-    background: #6b5b4f;
-    color: #fff;
-    text-align: center;
-    padding: 14px 10px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 24px;
-    z-index: 100;
-    box-shadow: 0 4px 16px rgba(107, 91, 79, 0.3);
-    transition: all 0.3s ease;
-}
-
-.mobile-cta:hover {
-    background: #4a3f35;
-}
-
-@media (max-width: 768px) {
-    .mobile-cta {
-        display: block;
     }
 }
