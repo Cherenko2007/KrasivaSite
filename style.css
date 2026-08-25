@@ -43,6 +43,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
@@ -51,6 +53,8 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 img {
@@ -432,6 +436,8 @@ a {
 
 @media (max-width: 768px) {
     .gallery-grid.video-grid {
+        flex-direction: column !important;
+        align-items: center !important;
         gap: 16px !important;
     }
     .gallery-grid.video-grid .gallery-item {
@@ -792,10 +798,11 @@ a {
     .nav-container {
         gap: 4px;
         padding: 10px 12px;
+        flex-wrap: wrap;
     }
 
     .nav-link {
-        padding: 8px 14px;
+        padding: 8px 12px;
         font-size: 13px;
     }
 
@@ -887,6 +894,11 @@ a {
 }
 
 @media (max-width: 480px) {
+    .nav-link {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
     .features-grid {
         grid-template-columns: 1fr;
     }
