@@ -44,6 +44,28 @@
     
     <link rel="stylesheet" href="style.css?v=5">
     
+    <!-- Стили для двух кнопок отзывов -->
+    <style>
+        .review-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+        .review-buttons .review-btn {
+            margin-bottom: 0;
+            flex: 1 1 220px;
+            max-width: 320px;
+        }
+        .review-btn-yandex {
+            background: linear-gradient(135deg, #fc3f1d, #ff6b35) !important;
+        }
+        .review-btn-yandex:hover {
+            background: linear-gradient(135deg, #e03510, #e85a20) !important;
+        }
+    </style>
+
     <!-- Schema.org WebSite -->
     <script type="application/ld+json">
     {
@@ -454,9 +476,15 @@
             <div class="container">
                 <h2 class="section-title">Отзывы клиентов о массаже</h2>
                 
-                <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">
-                    ✍️ Оставить отзыв в Instagram
-                </a>
+                <!-- Две кнопки: Instagram + Яндекс.Карты -->
+                <div class="review-buttons">
+                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">
+                        ✍️ Оставить отзыв в Instagram
+                    </a>
+                    <a href="https://yandex.ru/maps/org/krasiva/133185545034?si=py49vbf8kgh35bvyn9uby3wkgm" target="_blank" rel="noopener noreferrer" class="review-btn review-btn-yandex">
+                        🗺️ Оставить отзыв на Яндекс.Картах
+                    </a>
+                </div>
 
                 <div class="review-card">
                     <div class="review-quote">"</div>
