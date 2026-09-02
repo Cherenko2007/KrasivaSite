@@ -36,16 +36,27 @@ Built from scratch: design, layout, SEO optimization, and hosting deployment. Th
 ## Project Structure
 
 📁 krasiva-kirov.ru/
+
 ├── 📄 index.html          → Homepage (landing)
+
 ├── 📄 services.html       → Services & pricing
+
 ├── 📄 reviews.html        → Client testimonials
+
 ├── 📄 contacts.html       → Contacts & map
+
 ├── 📄 privacy.html        → Privacy policy
+
 ├── 📄 404.html            → Custom error page
+
 ├── 📄 style.css           → Single stylesheet
+
 ├── 📄 script.js           → Interactivity
+
 ├── 📄 sitemap.xml         → Sitemap
+
 ├── 📄 robots.txt          → Crawler instructions
+
 └── 🖼️  assets/            → Images & videos
 
 
