@@ -242,7 +242,7 @@
 
     <script src="script.js?v=2"></script>
 
-<!-- Модальное окно записи -->
+<!-- МОДАЛЬНОЕ ОКНО ЗАПИСИ (ПОЛНАЯ ВЕРСИЯ С ДОБАВЛЕННЫМ ВРЕМЕНЕМ) -->
 <div class="modal-overlay" id="bookingModal">
     <div class="modal-content">
         <button class="modal-close" id="modalClose">&times;</button>
@@ -272,6 +272,11 @@
             <div class="form-group">
                 <label for="clientDate">Желаемая дата</label>
                 <input type="date" id="clientDate" name="date" required>
+            </div>
+            <!-- ✅ ВОТ ЭТОТ КУСОЧЕК (ВРЕМЯ) Я ДОБАВИЛ В ПОЛНЫЙ ФАЙЛ -->
+            <div class="form-group">
+                <label for="clientTime">Желаемое время</label>
+                <input type="time" id="clientTime" name="time" required>
             </div>
             <button type="submit" class="btn btn-primary btn-large">Записаться</button>
             <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
