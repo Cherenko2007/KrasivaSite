@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                const response = await fetch('send.php', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams({ name, phone, service, date })
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                const response = await fetch('send.php', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams({ name, phone, service, date })
