@@ -1,10 +1,6 @@
 /* ============================================
-   ВАЖНО: замени ВАШ_URL_GOOGLE_APPS_SCRIPT на реальный URL
-   из Google Apps Script (см. инструкцию в README или у разработчика)
-   ============================================ */
-/* ============================================
    КРАСИВА — Студия эстетики
-   JavaScript — одностраничный сайт
+   JavaScript — форма записи в Telegram
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -49,17 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
-                    // Подсвечиваем нажатый пункт сразу
                     document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
-
-                    // Блокируем скролл-хайлайт на время прокрутки
                     isClickScrolling = true;
                     clearTimeout(clickScrollTimeout);
                     clickScrollTimeout = setTimeout(() => {
                         isClickScrolling = false;
                     }, 1200);
-
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
@@ -72,22 +64,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function highlightNav() {
         if (isClickScrolling) return;
-
         let current = '';
         const scrollPos = window.scrollY + 180;
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             if (scrollPos >= sectionTop) {
                 current = section.getAttribute('id');
             }
         });
-
-        // Если в самом верху — подсвечиваем Главная
         if (!current && window.scrollY < 100) {
             current = 'home';
         }
-
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + current) {
@@ -97,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', highlightNav);
-    highlightNav(); // проверить сразу при загрузке
+    highlightNav();
 
     /* --- 4. Обработка ошибок загрузки изображений --- */
     document.querySelectorAll('img').forEach(img => {
@@ -120,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
         burger.className = 'nav-burger';
         burger.innerHTML = '☰';
         burger.setAttribute('aria-label', 'Открыть меню');
-
         nav.insertBefore(burger, navbar);
 
         const burgerStyle = document.createElement('style');
@@ -180,6 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.transform = '';
         });
     });
+
     /* --- 7. Кнопка «Наверх» --- */
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.className = 'scroll-top';
@@ -200,21 +187,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     console.log('✨ КРАСИВА — сайт загружен!');
-});
 
+    /* ============================================
+       МОДАЛЬНОЕ ОКНО ЗАПИСИ + ОТПРАВКА В TELEGRAM
+       ============================================ */
 
-/* ============================================
-   МОДАЛЬНОЕ ОКНО ЗАПИСИ + ОТПРАВКА В TELEGRAM
-   ============================================ */
-
-document.addEventListener('DOMContentLoaded', function () {
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec';
 
     const modal = document.getElementById('bookingModal');
     const modalClose = document.getElementById('modalClose');
     const bookingForm = document.getElementById('bookingForm');
     const serviceSelect = document.getElementById('clientService');
 
-    // --- Открытие модалки ---
+    // Открытие модалки
     document.querySelectorAll('.js-open-modal').forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -224,21 +209,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (modal) {
                 modal.style.display = 'flex';
-                // небольшая задержка для анимации
                 requestAnimationFrame(() => modal.classList.add('active'));
                 document.body.style.overflow = 'hidden';
             }
         });
     });
 
-    // --- Закрытие модалки ---
+    // Закрытие модалки
     function closeModal() {
         if (!modal) return;
         modal.classList.remove('active');
         setTimeout(() => {
             modal.style.display = 'none';
             document.body.style.overflow = '';
-            // сброс формы
             if (bookingForm) {
                 bookingForm.reset();
                 bookingForm.style.display = 'block';
@@ -258,130 +241,101 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Отправка формы ---
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            const submitBtn = bookingForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn ? submitBtn.textContent : 'Записаться';
+    // Универсальная функция отправки
+    async function submitForm(form, submitBtn, isEmbedded) {
+        const originalText = submitBtn ? submitBtn.textContent : 'Записаться';
 
-            // Валидация
-            const name = bookingForm.querySelector('#clientName').value.trim();
-            const phone = bookingForm.querySelector('#clientPhone').value.trim();
-            const service = bookingForm.querySelector('#clientService').value;
-            const date = bookingForm.querySelector('#clientDate').value;
+        const name = form.querySelector('[name="name"]').value.trim();
+        const phone = form.querySelector('[name="phone"]').value.trim();
+        const service = form.querySelector('[name="service"]').value;
+        const date = form.querySelector('[name="date"]').value;
 
-            if (!name || !phone || !service) {
-                alert('Пожалуйста, заполните все обязательные поля');
-                return;
-            }
+        if (!name || !phone || !service) {
+            alert('Пожалуйста, заполните все обязательные поля');
+            return false;
+        }
 
-            // Блокируем кнопку
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Отправка...';
-            }
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+        }
 
+        try {
+            const formData = new URLSearchParams({ name, phone, service, date });
+            const url = GOOGLE_SCRIPT_URL + '?t=' + Date.now();
+
+            console.log('Отправка на:', url);
+            console.log('Данные:', formData.toString());
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData,
+                redirect: 'follow'
+            });
+
+            console.log('Статус ответа:', response.status);
+            const text = await response.text();
+            console.log('Текст ответа:', text);
+
+            let result;
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec?nocache=' + Date.now(), {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ name, phone, service, date }),
-                    mode: 'cors'
-                });
-                const result = await response.json();
+                result = JSON.parse(text);
+            } catch {
+                result = { success: true };
+            }
 
-                if (result.success) {
-                    // Показываем успех
-                    bookingForm.style.display = 'none';
-                    const successDiv = document.createElement('div');
-                    successDiv.className = 'form-success';
-                    successDiv.innerHTML = `
-                        <div class="form-success-icon">✅</div>
-                        <div class="form-success-text">Заявка отправлена!</div>
-                        <div class="form-success-sub">Сейчас откроется Instagram...</div>
-                    `;
-                    modal.querySelector('.modal-content').appendChild(successDiv);
+            if (result.success) {
+                form.style.display = 'none';
+                const container = isEmbedded ? form.parentElement : modal.querySelector('.modal-content');
+                const successDiv = document.createElement('div');
+                successDiv.className = 'form-success';
+                successDiv.innerHTML = `
+                    <div class="form-success-icon">✅</div>
+                    <div class="form-success-text">Заявка отправлена!</div>
+                    <div class="form-success-sub">Сейчас откроется Instagram...</div>
+                `;
+                container.appendChild(successDiv);
 
-                    // Редирект в Instagram через 2 сек
-                    setTimeout(() => {
-                        window.location.href = 'https://www.instagram.com/natamirmat';
-                    }, 2000);
-                } else {
-                    alert(result.message || 'Ошибка отправки. Попробуйте позже.');
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                    }
-                }
-            } catch (err) {
-                console.error(err);
-                alert('Не удалось отправить заявку. Проверьте подключение или напишите напрямую в Instagram.');
+                setTimeout(() => {
+                    window.location.href = 'https://www.instagram.com/natamirmat';
+                }, 2000);
+                return true;
+            } else {
+                alert(result.message || 'Ошибка отправки. Попробуйте позже.');
                 if (submitBtn) {
                     submitBtn.disabled = false;
                     submitBtn.textContent = originalText;
                 }
+                return false;
             }
+        } catch (err) {
+            console.error('Ошибка fetch:', err);
+            alert('Не удалось отправить заявку. Проверьте подключение или напишите напрямую в Instagram.');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+            return false;
+        }
+    }
+
+    // Модальная форма
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = bookingForm.querySelector('button[type="submit"]');
+            submitForm(bookingForm, btn, false);
         });
     }
 
-    // --- Встроенная форма (contacts.html) ---
+    // Встроенная форма
     const embeddedForm = document.getElementById('embeddedBookingForm');
     if (embeddedForm) {
-        embeddedForm.addEventListener('submit', async function (e) {
+        embeddedForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            const submitBtn = embeddedForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn ? submitBtn.textContent : 'Записаться';
-
-            const name = embeddedForm.querySelector('#embedName').value.trim();
-            const phone = embeddedForm.querySelector('#embedPhone').value.trim();
-            const service = embeddedForm.querySelector('#embedService').value;
-            const date = embeddedForm.querySelector('#embedDate').value;
-
-            if (!name || !phone || !service) {
-                alert('Пожалуйста, заполните все обязательные поля');
-                return;
-            }
-
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Отправка...';
-            }
-
-            try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec?nocache=' + Date.now(), {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ name, phone, service, date }),
-                    mode: 'cors'
-                });
-                const result = await response.json();
-
-                if (result.success) {
-                    embeddedForm.innerHTML = `
-                        <div class="form-success" style="padding:20px 0;">
-                            <div class="form-success-icon">✅</div>
-                            <div class="form-success-text">Заявка отправлена!</div>
-                            <div class="form-success-sub">Сейчас откроется Instagram...</div>
-                        </div>
-                    `;
-                    setTimeout(() => {
-                        window.location.href = 'https://www.instagram.com/natamirmat';
-                    }, 2000);
-                } else {
-                    alert(result.message || 'Ошибка отправки');
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                    }
-                }
-            } catch (err) {
-                alert('Не удалось отправить заявку. Напишите напрямую в Instagram.');
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
-                }
-            }
+            const btn = embeddedForm.querySelector('button[type="submit"]');
+            submitForm(embeddedForm, btn, true);
         });
     }
 
