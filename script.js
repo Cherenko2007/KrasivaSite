@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
        ============================================ */
 
     // ⚠️ ЗАМЕНИТЕ НА СВОЙ URL (из Apps Script)
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/ВАШ_АДРЕС/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec';
 
     const modal = document.getElementById('bookingModal');
     const modalClose = document.getElementById('modalClose');
