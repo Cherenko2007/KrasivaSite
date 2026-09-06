@@ -738,11 +738,11 @@ a {
 }
 
 .review-btn-yandex {
-    background: linear-gradient(135deg, #fc3f1d, #ff6b35) !important;
+    background: linear-gradient(135deg, #6c362d, #8a4a3f) !important;
 }
 
 .review-btn-yandex:hover {
-    background: linear-gradient(135deg, #e03510, #e85a20) !important;
+    background: linear-gradient(135deg, #5a2d25, #7a4035) !important;
 }
 
 /* --- ФУТЕР --- */
@@ -957,12 +957,12 @@ a {
 
     .review-buttons {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
     }
 
     .review-buttons .review-btn {
-        width: 100%;
-        max-width: 100%;
+        width: auto;
+        max-width: 260px;
     }
 
     .mobile-cta {
