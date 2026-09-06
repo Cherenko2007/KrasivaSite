@@ -64,6 +64,7 @@
       ]
     }
     </script>
+<base target="_blank">
 </head>
 <body>
 
@@ -126,6 +127,41 @@
                     </a>
                 </div>
 
+
+                <!-- Форма записи -->
+                <div class="embedded-form">
+                    <h3 class="embedded-form-title">Онлайн-запись</h3>
+                    <form class="booking-form" id="embeddedBookingForm">
+                        <div class="form-group">
+                            <label for="embedName">Ваше имя</label>
+                            <input type="text" id="embedName" name="name" required placeholder="Например, Анна">
+                        </div>
+                        <div class="form-group">
+                            <label for="embedPhone">Телефон</label>
+                            <input type="tel" id="embedPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
+                        </div>
+                        <div class="form-group">
+                            <label for="embedService">Услуга</label>
+                            <select id="embedService" name="service" required>
+                                <option value="" disabled selected>Выберите услугу</option>
+                                <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
+                                <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
+                                <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
+                                <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
+                                <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
+                                <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
+                                <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="embedDate">Желаемая дата</label>
+                            <input type="date" id="embedDate" name="date" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Записаться</button>
+                        <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
+                    </form>
+                </div>
+
                 <!-- Сообщение -->
                 <div class="contact-message">
                     <p class="contact-message-text">
@@ -152,5 +188,43 @@
     </footer>
 
     <script src="script.js"></script>
+
+<!-- Модальное окно записи -->
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <h3 class="modal-title">Запись на массаж</h3>
+        <form class="booking-form" id="bookingForm">
+            <div class="form-group">
+                <label for="clientName">Ваше имя</label>
+                <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
+            </div>
+            <div class="form-group">
+                <label for="clientPhone">Телефон</label>
+                <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
+            </div>
+            <div class="form-group">
+                <label for="clientService">Услуга</label>
+                <select id="clientService" name="service" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                    <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
+                    <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
+                    <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
+                    <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
+                    <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
+                    <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
+                    <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="clientDate">Желаемая дата</label>
+                <input type="date" id="clientDate" name="date" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">Записаться</button>
+            <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
