@@ -1,6 +1,6 @@
 /* ============================================
    КРАСИВА — Студия эстетики
-   JavaScript — форма записи в Telegram
+   JavaScript — форма записи (с диагностикой и временем)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -192,7 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
        МОДАЛЬНОЕ ОКНО ЗАПИСИ + ОТПРАВКА В TELEGRAM
        ============================================ */
 
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec';
+    // ⚠️ ЗАМЕНИТЕ НА СВОЙ URL (из Apps Script)
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/ВАШ_АДРЕС/exec';
 
     const modal = document.getElementById('bookingModal');
     const modalClose = document.getElementById('modalClose');
@@ -241,14 +242,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Универсальная функция отправки
+    // Универсальная функция отправки (с диагностикой и временем)
     async function submitForm(form, submitBtn, isEmbedded) {
         const originalText = submitBtn ? submitBtn.textContent : 'Записаться';
 
+        // === ЧИТАЕМ ВСЕ ПОЛЯ, ВКЛЮЧАЯ ВРЕМЯ ===
         const name = form.querySelector('[name="name"]').value.trim();
         const phone = form.querySelector('[name="phone"]').value.trim();
         const service = form.querySelector('[name="service"]').value;
         const date = form.querySelector('[name="date"]').value;
+        const timeInput = form.querySelector('[name="time"]');
+        const time = timeInput ? timeInput.value : '';   // ← ЭТО ВАЖНО
 
         if (!name || !phone || !service) {
             alert('Пожалуйста, заполните все обязательные поля');
@@ -261,11 +265,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
-            const formData = new URLSearchParams({ name, phone, service, date });
+            // === ДОБАВЛЯЕМ time В ОТПРАВЛЯЕМЫЕ ДАННЫЕ ===
+            const formData = new URLSearchParams({ name, phone, service, date, time });
             const url = GOOGLE_SCRIPT_URL + '?t=' + Date.now();
 
-            console.log('Отправка на:', url);
-            console.log('Данные:', formData.toString());
+            console.log('📤 Отправка данных на:', url);
+            console.log('📦 Данные:', formData.toString());
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -274,15 +279,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 redirect: 'follow'
             });
 
-            console.log('Статус ответа:', response.status);
+            console.log('📨 Статус ответа:', response.status);
+
             const text = await response.text();
-            console.log('Текст ответа:', text);
+            console.log('📄 Текст ответа:', text);
 
             let result;
             try {
                 result = JSON.parse(text);
             } catch {
-                result = { success: true };
+                if (response.ok) {
+                    result = { success: true };
+                } else {
+                    throw new Error('Сервер вернул ошибку: ' + text);
+                }
             }
 
             if (result.success) {
@@ -310,8 +320,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return false;
             }
         } catch (err) {
-            console.error('Ошибка fetch:', err);
-            alert('Не удалось отправить заявку. Проверьте подключение или напишите напрямую в Instagram.');
+            console.error('❌ Ошибка при отправке:', err);
+            alert('Не удалось отправить заявку. Проверьте консоль (F12) для деталей. \nОшибка: ' + err.message);
             if (submitBtn) {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
@@ -329,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Встроенная форма
+    // Встроенная форма (для contacts.html)
     const embeddedForm = document.getElementById('embeddedBookingForm');
     if (embeddedForm) {
         embeddedForm.addEventListener('submit', function (e) {
