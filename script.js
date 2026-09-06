@@ -283,10 +283,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec?nocache=' + Date.now(), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ name, phone, service, date })
+                    body: new URLSearchParams({ name, phone, service, date }),
+                    mode: 'cors'
                 });
                 const result = await response.json();
 
@@ -348,10 +349,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec?nocache=' + Date.now(), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ name, phone, service, date })
+                    body: new URLSearchParams({ name, phone, service, date }),
+                    mode: 'cors'
                 });
                 const result = await response.json();
 
