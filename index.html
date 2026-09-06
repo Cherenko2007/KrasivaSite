@@ -296,6 +296,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/111903801" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+<base target="_blank">
 </head>
 <body>
 
@@ -329,7 +330,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#services" class="btn btn-primary">Смотреть услуги</a>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Записаться</a>
+                    <a href="#" class="btn btn-secondary js-open-modal">Записаться</a>
                 </div>
             </div>
         </section>
@@ -430,7 +431,7 @@
                     <div class="service-desc">
                         Глубокое воздействие на ткани с помощью профессионального аппарата. Убирает застой лимфы, уменьшает объёмы, подтягивает кожу. Эффект заметен уже после первого сеанса.
                     </div>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-small">Записаться</a>
+                    <a href="#" class="btn btn-small js-open-modal">Записаться</a>
                 </div>
 
                 <div class="service-card">
@@ -442,7 +443,7 @@
                     <div class="service-desc">
                         Ручной массаж всего тела для расслабления мышц, улучшения кровообращения и снятия стресса. Подходит для восстановления после нагрузок.
                     </div>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-small">Записаться</a>
+                    <a href="#" class="btn btn-small js-open-modal">Записаться</a>
                 </div>
 
                 <div class="service-card">
@@ -454,7 +455,7 @@
                     <div class="service-desc">
                         Нежный массаж лица для улучшения тонуса кожи, разглаживания мимических морщин и активации лимфотока. Лицо выглядит свежее и отдохнувшим.
                     </div>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-small">Записаться</a>
+                    <a href="#" class="btn btn-small js-open-modal">Записаться</a>
                 </div>
 
                 <div class="service-card">
@@ -465,7 +466,7 @@
                     <div class="service-desc">
                         Комплексная работа с проблемными зонами. Разбивает жировые отложения, выводит лишнюю жидкость, разглаживает «апельсиновую корку».
                     </div>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-small">Записаться</a>
+                    <a href="#" class="btn btn-small js-open-modal">Записаться</a>
                 </div>
 
                 <div class="service-card">
@@ -477,7 +478,7 @@
                     <div class="service-desc">
                         Снятие мышечного напряжения в области спины и поясницы. После сеанса - ощущение лёгкости и отсутствия боли.
                     </div>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-small">Записаться</a>
+                    <a href="#" class="btn btn-small js-open-modal">Записаться</a>
                 </div>
 
                 <div class="service-card">
@@ -489,7 +490,7 @@
                     <div class="service-desc">
                         Идеально для тех, кто много работает за компьютером. Устраняет зажимы, головные боли и чувство скованности.
                     </div>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-small">Записаться</a>
+                    <a href="#" class="btn btn-small js-open-modal">Записаться</a>
                 </div>
 
                 <div class="service-card">
@@ -501,7 +502,7 @@
                     <div class="service-desc">
                         Работа специальным инструментом для глубокой проработки fascia и мышечных слоёв. Помогает при хронических зажимах и для коррекции фигуры.
                     </div>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-small">Записаться</a>
+                    <a href="#" class="btn btn-small js-open-modal">Записаться</a>
                 </div>
             </div>
         </section>
@@ -732,7 +733,7 @@
                 <div class="cta-box">
                     <h2 class="cta-title">Запишитесь на массаж</h2>
                     <p class="cta-text">Работаю по предварительной записи. Напишите мне в Instagram - договоримся об удобном времени.</p>
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">Написать в Instagram</a>
+                    <a href="#" class="btn btn-primary btn-large js-open-modal">Записаться</a>
                 </div>
             </div>
         </section>
@@ -753,10 +754,48 @@
         <div class="footer-copy">© 2026 КРАСИВА. Все права защищены.</div>
     </footer>
     <!-- Мобильная кнопка записи -->
-    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="mobile-cta">
+    <a href="#" class="mobile-cta js-open-modal">
         Записаться
     </a>
     
     <script src="script.js"></script>
+
+<!-- Модальное окно записи -->
+<div class="modal-overlay" id="bookingModal">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <h3 class="modal-title">Запись на массаж</h3>
+        <form class="booking-form" id="bookingForm">
+            <div class="form-group">
+                <label for="clientName">Ваше имя</label>
+                <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
+            </div>
+            <div class="form-group">
+                <label for="clientPhone">Телефон</label>
+                <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
+            </div>
+            <div class="form-group">
+                <label for="clientService">Услуга</label>
+                <select id="clientService" name="service" required>
+                    <option value="" disabled selected>Выберите услугу</option>
+                    <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
+                    <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
+                    <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
+                    <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
+                    <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
+                    <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
+                    <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="clientDate">Желаемая дата</label>
+                <input type="date" id="clientDate" name="date" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">Записаться</button>
+            <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>
