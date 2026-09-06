@@ -88,14 +88,12 @@
     </nav>
 
     <main>
-        <!-- ЗАГОЛОВОК -->
         <section class="contacts-hero">
             <div class="container">
                 <h2>Контакты</h2>
             </div>
         </section>
 
-        <!-- КОНТАКТЫ -->
         <section class="section">
             <div class="container">
                 <!-- Адрес -->
@@ -109,26 +107,17 @@
                 <!-- Соцсети -->
                 <div class="social-card">
                     <div class="social-card-title">Связаться со мной</div>
-
                     <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="social-link">
                         <div class="social-icon">📸</div>
-                        <div>
-                            <div class="social-name">Instagram</div>
-                            <div class="social-username">@natamirmat</div>
-                        </div>
+                        <div><div class="social-name">Instagram</div><div class="social-username">@natamirmat</div></div>
                     </a>
-
                     <a href="https://vk.ru/id578712934" target="_blank" rel="noopener noreferrer" class="social-link">
                         <div class="social-icon">💬</div>
-                        <div>
-                            <div class="social-name">ВКонтакте</div>
-                            <div class="social-username">Наталья Мурадян</div>
-                        </div>
+                        <div><div class="social-name">ВКонтакте</div><div class="social-username">Наталья Мурадян</div></div>
                     </a>
                 </div>
 
-
-                <!-- Форма записи -->
+                <!-- ВСТРОЕННАЯ ФОРМА (с добавленным временем) -->
                 <div class="embedded-form">
                     <h3 class="embedded-form-title">Онлайн-запись</h3>
                     <form class="booking-form" id="embeddedBookingForm">
@@ -157,6 +146,11 @@
                             <label for="embedDate">Желаемая дата</label>
                             <input type="date" id="embedDate" name="date" required>
                         </div>
+                        <!-- ✅ ДОБАВЛЕНО ВРЕМЯ ВО ВСТРОЕННУЮ ФОРМУ -->
+                        <div class="form-group">
+                            <label for="embedTime">Желаемое время</label>
+                            <input type="time" id="embedTime" name="time" required>
+                        </div>
                         <button type="submit" class="btn btn-primary" style="width:100%;">Записаться</button>
                         <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
                     </form>
@@ -164,10 +158,7 @@
 
                 <!-- Сообщение -->
                 <div class="contact-message">
-                    <p class="contact-message-text">
-                        Напишите мне в Instagram или ВКонтакте — договоримся об удобном времени
-                        и отвечу на все вопросы 💕
-                    </p>
+                    <p class="contact-message-text">Напишите мне в Instagram или ВКонтакте — договоримся об удобном времени и отвечу на все вопросы 💕</p>
                 </div>
             </div>
         </section>
@@ -189,42 +180,47 @@
 
     <script src="script.js?v=2"></script>
 
-<!-- Модальное окно записи -->
-<div class="modal-overlay" id="bookingModal">
-    <div class="modal-content">
-        <button class="modal-close" id="modalClose">&times;</button>
-        <h3 class="modal-title">Запись на массаж</h3>
-        <form class="booking-form" id="bookingForm">
-            <div class="form-group">
-                <label for="clientName">Ваше имя</label>
-                <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
-            </div>
-            <div class="form-group">
-                <label for="clientPhone">Телефон</label>
-                <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
-            </div>
-            <div class="form-group">
-                <label for="clientService">Услуга</label>
-                <select id="clientService" name="service" required>
-                    <option value="" disabled selected>Выберите услугу</option>
-                    <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
-                    <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
-                    <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
-                    <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
-                    <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
-                    <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
-                    <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="clientDate">Желаемая дата</label>
-                <input type="date" id="clientDate" name="date" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-large">Записаться</button>
-            <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
-        </form>
+    <!-- МОДАЛЬНОЕ ОКНО ЗАПИСИ (с добавленным временем) -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title">Запись на массаж</h3>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="clientName">Ваше имя</label>
+                    <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Телефон</label>
+                    <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
+                </div>
+                <div class="form-group">
+                    <label for="clientService">Услуга</label>
+                    <select id="clientService" name="service" required>
+                        <option value="" disabled selected>Выберите услугу</option>
+                        <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
+                        <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
+                        <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
+                        <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
+                        <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
+                        <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
+                        <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="clientDate">Желаемая дата</label>
+                    <input type="date" id="clientDate" name="date" required>
+                </div>
+                <!-- ✅ ДОБАВЛЕНО ВРЕМЯ -->
+                <div class="form-group">
+                    <label for="clientTime">Желаемое время</label>
+                    <input type="time" id="clientTime" name="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">Записаться</button>
+                <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
+            </form>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
