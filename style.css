@@ -1000,3 +1000,196 @@ a {
         font-size: 24px;
     }
 }
+
+
+/* ============================================
+   МОДАЛЬНОЕ ОКНО ЗАПИСИ
+   ============================================ */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(74, 63, 53, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--color-bg-light);
+    border-radius: var(--radius);
+    padding: 36px 32px 32px;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(107, 91, 79, 0.25);
+    border: 1px solid var(--color-border-light);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-text-light);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--color-accent-light);
+    color: var(--color-primary-dark);
+}
+
+.modal-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* --- ФОРМА --- */
+.booking-form .form-group {
+    margin-bottom: 16px;
+}
+
+.booking-form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg-cream);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 14px;
+    transition: var(--transition);
+    outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: var(--color-primary-soft);
+    box-shadow: 0 0 0 3px rgba(107, 91, 79, 0.08);
+    background: var(--color-bg-light);
+}
+
+.booking-form input::placeholder {
+    color: var(--color-text-soft);
+}
+
+.booking-form select:invalid {
+    color: var(--color-text-soft);
+}
+
+.form-note {
+    font-size: 12px;
+    color: var(--color-text-light);
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.form-error {
+    color: #c0392b;
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+}
+
+.form-success {
+    text-align: center;
+    padding: 20px;
+}
+
+.form-success-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.form-success-text {
+    font-size: 15px;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.form-success-sub {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+/* Кнопка отправки в форме */
+.booking-form .btn {
+    width: 100%;
+    margin-top: 8px;
+}
+
+.booking-form .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* --- ВСТРОЕННАЯ ФОРМА (для contacts.html) --- */
+.embedded-form {
+    background: var(--color-bg-light);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-border-light);
+    margin-bottom: 20px;
+}
+
+.embedded-form-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- АДАПТИВ МОДАЛКИ --- */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 28px 20px 24px;
+        margin: 0 8px;
+    }
+    .modal-title {
+        font-size: 20px;
+    }
+}
