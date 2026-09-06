@@ -957,12 +957,16 @@ a {
 
     .review-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        width: 100%;
     }
 
     .review-buttons .review-btn {
-        width: auto;
-        max-width: 260px;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 16px;
+        font-size: 14px;
+        margin-bottom: 10px;
     }
 
     .mobile-cta {
