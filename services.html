@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=10">
 
     <!-- Breadcrumbs Schema.org -->
     <script type="application/ld+json">
@@ -222,6 +222,20 @@
                     </div>
                     <a href="#" class="btn btn-small js-open-modal" data-service="Блейдд техника">Записаться</a>
                 </div>
+
+                <!-- === НОВЫЙ БЛОК: ПРОТИВОПОКАЗАНИЯ === -->
+                <div class="contraindications">
+                    <h3>⛔ Противопоказания к вибрационному массажу</h3>
+                    <ul>
+                        <li>Беременность</li>
+                        <li>Онкологические заболевания</li>
+                    </ul>
+                    <p style="margin-top: 16px; font-size: 13px; color: var(--color-text-muted);">
+                        Для остальных видов массажа (классический, антицеллюлитный, блейдд, лицо, спина, шейно-воротниковый) противопоказаний нет.<br>
+                        Перед процедурой обязательно проконсультируйтесь с мастером – мы учтём все ваши особенности.
+                    </p>
+                </div>
+
             </div>
         </section>
     </main>
@@ -240,49 +254,48 @@
         <div class="footer-copy">© 2026 КРАСИВА. Все права защищены.</div>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 
-<!-- МОДАЛЬНОЕ ОКНО ЗАПИСИ (ПОЛНАЯ ВЕРСИЯ С ДОБАВЛЕННЫМ ВРЕМЕНЕМ) -->
-<div class="modal-overlay" id="bookingModal">
-    <div class="modal-content">
-        <button class="modal-close" id="modalClose">&times;</button>
-        <h3 class="modal-title">Запись на массаж</h3>
-        <form class="booking-form" id="bookingForm">
-            <div class="form-group">
-                <label for="clientName">Ваше имя</label>
-                <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
-            </div>
-            <div class="form-group">
-                <label for="clientPhone">Телефон</label>
-                <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
-            </div>
-            <div class="form-group">
-                <label for="clientService">Услуга</label>
-                <select id="clientService" name="service" required>
-                    <option value="" disabled selected>Выберите услугу</option>
-                    <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
-                    <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
-                    <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
-                    <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
-                    <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
-                    <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
-                    <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="clientDate">Желаемая дата</label>
-                <input type="date" id="clientDate" name="date" required>
-            </div>
-            <!-- ✅ ВОТ ЭТОТ КУСОЧЕК (ВРЕМЯ) Я ДОБАВИЛ В ПОЛНЫЙ ФАЙЛ -->
-            <div class="form-group">
-                <label for="clientTime">Желаемое время</label>
-                <input type="time" id="clientTime" name="time" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-large">Записаться</button>
-            <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
-        </form>
+    <!-- Модальное окно записи -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title">Запись на массаж</h3>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="clientName">Ваше имя</label>
+                    <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Телефон</label>
+                    <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
+                </div>
+                <div class="form-group">
+                    <label for="clientService">Услуга</label>
+                    <select id="clientService" name="service" required>
+                        <option value="" disabled selected>Выберите услугу</option>
+                        <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
+                        <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
+                        <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
+                        <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
+                        <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
+                        <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
+                        <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="clientDate">Желаемая дата</label>
+                    <input type="date" id="clientDate" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientTime">Желаемое время</label>
+                    <input type="time" id="clientTime" name="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">Записаться</button>
+                <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
+            </form>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
