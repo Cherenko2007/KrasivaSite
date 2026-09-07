@@ -349,4 +349,52 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+       /* ============================================
+       FAQ АККОРДЕОН
+       ============================================ */
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+            
+            // Закрываем все
+            faqItems.forEach(el => el.classList.remove('active'));
+            
+            // Открываем текущий, если он был закрыт
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    /* ============================================
+       COOKIE БАННЕР
+       ============================================ */
+    function createCookieBanner() {
+        // Проверяем, согласился ли пользователь уже
+        if (localStorage.getItem('cookieAccepted') === 'true') {
+            return;
+        }
+
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.id = 'cookieBanner';
+        banner.innerHTML = `
+            <p>🍪 Мы используем cookies для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с этим.</p>
+            <button class="btn-cookie" id="acceptCookies">Ок</button>
+        `;
+
+        document.body.appendChild(banner);
+
+        document.getElementById('acceptCookies').addEventListener('click', function() {
+            localStorage.setItem('cookieAccepted', 'true');
+            banner.style.display = 'none';
+        });
+    }
+
+    // Запускаем баннер с задержкой, чтобы он не мешал загрузке страницы
+    setTimeout(createCookieBanner, 1000);
+
 });
