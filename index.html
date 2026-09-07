@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXN6LR2YHV"></script>
@@ -13,6 +12,7 @@
       gtag('config', 'G-JXN6LR2YHV');
     </script>
     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="gh38SbBCcaE_0oU8Dg4fRVbWcby95Mk8EBPlHCIIh0I" />
     
     <!-- SEO -->
@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=10">
 
     <!-- Schema.org WebSite -->
     <script type="application/ld+json">
@@ -218,6 +218,62 @@
           "reviewBody": "Массаж реально приносит результат, кожа подтягивается, заметно улучшается её качество и внешний вид. Наталья волшебница!",
           "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
           "datePublished": "2026-05-30"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Ходила на массаж лица в первый раз. Овал лица заметно подтянулся, ушли отёки под глазами, кожа стала бархатной. Теперь записалась на курс.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-08-28"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "После трёх сеансов шейно-воротникового массажа перестала болеть голова, ушёл хруст при поворотах. Рекомендую всем сидячим работникам.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-08-20"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Занимаюсь в зале, мышцы постоянно забиты. Классический массаж у Натальи — спасение. Восстановление идёт в разы быстрее.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-08-15"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Прошла курс блейдд техники для спины. Годами болела поясница, после пятого сеанса свободно наклоняюсь. Глубокая проработка fascia реально работает.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-08-05"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Пришла по рекомендации подруги. Уютный кабинет, всё чисто. Наталья подробно расспросила о здоровье и подобрала программу под меня.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-07-25"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Прошла 8 сеансов антицеллюлитного массажа. Апельсиновая корка стала гораздо менее заметной, объёмы на бёдрах уменьшились на 4 см.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-07-10"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Отправила сюда мужа — скептик. После аппаратного массажа сказал: Запиши ещё. Говорит, такой лёгкости в ногах не чувствовал лет десять.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-07-03"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Клиент" },
+          "reviewBody": "Редко пишу отзывы, но здесь заслуживает. Наталья — мастер с большой буквы, внимательная, пунктуальная. Рекомендую всем подругам.",
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "datePublished": "2026-06-18"
         }
       ],
       "sameAs": [
@@ -253,12 +309,13 @@
         </div>
     </header>
 
-    <!-- НАВИГАЦИЯ -->
+    <!-- НАВИГАЦИЯ (добавлен пункт FAQ) -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-link active">Главная</a>
             <a href="#services" class="nav-link">Услуги</a>
             <a href="#reviews" class="nav-link">Отзывы</a>
+            <a href="#faq" class="nav-link">FAQ</a>
             <a href="#contacts" class="nav-link">Контакты</a>
         </div>
     </nav>
@@ -366,24 +423,88 @@
                     <div class="promo-banner-price">11 сеансов за 16 000 ₽</div>
                 </div>
 
-                <!-- Список услуг (сокращён для примера, но вы можете оставить свои) -->
+                <!-- Список услуг -->
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-name">Массаж аппаратный на всё тело</div>
                         <div class="service-price">2 200 ₽</div>
                     </div>
-                    <div class="service-desc">Глубокое воздействие на ткани с помощью профессионального аппарата.</div>
+                    <div class="service-desc">
+                        Глубокое воздействие на ткани с помощью профессионального аппарата. Убирает застой лимфы, уменьшает объёмы, подтягивает кожу. Эффект заметен уже после первого сеанса.
+                    </div>
                     <a href="#" class="btn btn-small js-open-modal" data-service="Аппаратный массаж">Записаться</a>
                 </div>
+
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-name">Массаж классический</div>
                         <div class="service-price">2 200 ₽</div>
                     </div>
-                    <div class="service-desc">Ручной массаж всего тела для расслабления мышц.</div>
+                    <div class="service-time">⏱ 1 час</div>
+                    <div class="service-desc">
+                        Ручной массаж всего тела для расслабления мышц, улучшения кровообращения и снятия стресса. Подходит для восстановления после нагрузок.
+                    </div>
                     <a href="#" class="btn btn-small js-open-modal" data-service="Классический массаж">Записаться</a>
                 </div>
-                <!-- Добавьте остальные услуги по аналогии (они были в вашем коде) -->
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж лица</div>
+                        <div class="service-price">1 400 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 30 минут</div>
+                    <div class="service-desc">
+                        Нежный массаж лица для улучшения тонуса кожи, разглаживания мимических морщин и активации лимфотока. Лицо выглядит свежее и отдохнувшим.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Массаж лица">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж антицеллюлитный</div>
+                        <div class="service-price">2 200 ₽</div>
+                    </div>
+                    <div class="service-desc">
+                        Комплексная работа с проблемными зонами. Разбивает жировые отложения, выводит лишнюю жидкость, разглаживает «апельсиновую корку».
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Антицеллюлитный массаж">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж спины</div>
+                        <div class="service-price">1 900 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 35 минут</div>
+                    <div class="service-desc">
+                        Снятие мышечного напряжения в области спины и поясницы. После сеанса - ощущение лёгкости и отсутствия боли.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Массаж спины">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж шейно-воротниковой зоны</div>
+                        <div class="service-price">1 400 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 30 минут</div>
+                    <div class="service-desc">
+                        Идеально для тех, кто много работает за компьютером. Устраняет зажимы, головные боли и чувство скованности.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Шейно-воротниковый">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Блейдд техника</div>
+                        <div class="service-price">2 500 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 1 час</div>
+                    <div class="service-desc">
+                        Работа специальным инструментом для глубокой проработки fascia и мышечных слоёв. Помогает при хронических зажимах и для коррекции фигуры.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Блейдд техника">Записаться</a>
+                </div>
             </div>
         </section>
 
@@ -391,17 +512,221 @@
         <section class="section reviews-section" id="reviews">
             <div class="container">
                 <h2 class="section-title">Отзывы клиентов о массаже</h2>
+                
+                <!-- Две кнопки: Instagram + Яндекс.Карты -->
                 <div class="review-buttons">
-                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">✍️ Оставить отзыв в Instagram</a>
-                    <a href="https://yandex.ru/maps/org/krasiva/133185545034?si=py49vbf8kgh35bvyn9uby3wkgm" target="_blank" rel="noopener noreferrer" class="review-btn review-btn-yandex">🗺️ Оставить отзыв на Яндекс.Картах</a>
+                    <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">
+                        ✍️ Оставить отзыв в Instagram
+                    </a>
+                    <a href="https://yandex.ru/maps/org/krasiva/133185545034?si=py49vbf8kgh35bvyn9uby3wkgm" target="_blank" rel="noopener noreferrer" class="review-btn review-btn-yandex">
+                        🗺️ Оставить отзыв на Яндекс.Картах
+                    </a>
                 </div>
-                <!-- Несколько отзывов (ваши оригинальные) -->
+
                 <div class="review-card">
                     <div class="review-quote">"</div>
-                    <p class="review-text">Похудеть с помощью аппаратного массажа я уже не планировала, но массаж Натальи реально работает! Живот ушёл, ноги реально похудели. Я в восторге.</p>
+                    <p class="review-text">
+                        Похудеть с помощью аппаратного массажа я уже не планировала, но массаж Натальи реально работает! 
+                        Живот ушёл, ноги реально похудели. Я в восторге - это не пустые слова. 
+                        Наталья - массажист с душой и с любовью к своему делу!
+                    </p>
                     <div class="review-date">- 15 июня</div>
                 </div>
-                <!-- Остальные отзывы добавьте сами, их много -->
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Утром встала на весы - минус 1,5 кг. Я счастлива! И шорты стали свободными 🔥
+                    </p>
+                    <div class="review-date">- 12 июня</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Моя Наталья проходит курс - с каждым днём она всё стройнее и стройнее. 
+                        Ляшки реально похудели, надела брюки лёгкие и они побалтываются. Вы волшебница!
+                    </p>
+                    <div class="review-date">- 2 июня</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Как спинка? Замечательно! Не болит и легкость. 
+                        В массаже спины после ручных техник прохожу вибромассажем двумя насадками 🔥
+                    </p>
+                    <div class="review-date">- 29 мая</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Хочу поделиться восторгом! Решила попробовать вибро антицеллюлитный массаж. 
+                        Аппаратом ощущается сильная вибрация и глубокое воздействие на ткани. НЕ БОЛЬНО, 
+                        но чувствительно и приятно. Кожа стала более гладкой, ушли даже объёмы с первого раза. 
+                        Наталья очень приветливая и внимательная!
+                    </p>
+                    <div class="review-date">- 8 июня</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Спасибо большое, Наталья. Я в восторге от первого раза - жду новой встречи! 
+                        Массаж реально приносит результат, кожа подтягивается, заметно улучшается её качество и внешний вид. 
+                        Наталья - волшебница!
+                    </p>
+                    <div class="review-date">- 30 мая</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Так вспомнила, что отзыв) Массаж реально приносит результат, кожа подтягивается, 
+                        заметно улучшается её качество и внешний вид. Наталья волшебница!
+                    </p>
+                    <div class="review-date">- 30 мая</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Ходила на массаж лица в первый раз и осталась в полном восторге. 
+                        Овал лица заметно подтянулся, ушли отёки под глазами, кожа стала бархатной. 
+                        Наталья работает очень деликатно, но при этом чувствуется, что прорабатывает каждую зону. 
+                        Теперь записалась на курс.
+                    </p>
+                    <div class="review-date">— 28 августа</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Работаю за компьютером по 10 часов, шея и плечи были в каменном состоянии. 
+                        После трёх сеансов шейно-воротникового массажа перестала болеть голова, 
+                        ушёл хруст при поворотах и появилась подвижность. Рекомендую всем, кто ведёт сидячий образ жизни.
+                    </p>
+                    <div class="review-date">— 20 августа</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Занимаюсь в зале, мышцы постоянно забиты. Классический массаж у Натальи — спасение. 
+                        После сеанса восстановление идёт в разы быстрее, нет крепатуры. 
+                        Мастер чувствует тело и знает, где именно нужно добавить давление. 🔥
+                    </p>
+                    <div class="review-date">— 15 августа</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Прошла курс блейдд техники для спины — это что-то невероятное. 
+                        Годами болела поясница, перепробовала всё. После пятого сеанса свободно наклоняюсь, 
+                        сижу без боли, даже сон улучшился. Глубокая проработка fascia реально работает. 
+                        Огромная благодарность Наталье за профессионализм.
+                    </p>
+                    <div class="review-date">— 5 августа</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Пришла по рекомендации подруги и сразу почувствовала разницу. 
+                        Уютный кабинет, приятная музыка, всё чисто и аккуратно. 
+                        Наталья подробно расспросила о состоянии здоровья и подобрала программу именно под меня. 
+                        Уже после первого визита поняла, что буду ходить регулярно. 💕
+                    </p>
+                    <div class="review-date">— 25 июля</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Прошла 8 сеансов антицеллюлитного массажа. Результат превзошёл ожидания: 
+                        «апельсиновая корка» стала гораздо менее заметной, кожа упругая, 
+                        объёмы на бёдрах уменьшились на 4 см. Самое главное — процедура не вызывает синяков 
+                        и дискомфорта, как у некоторых массажистов.
+                    </p>
+                    <div class="review-date">— 10 июля</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Отправила сюда мужа — он был убеждённый скептик в массажах. 
+                        После аппаратного массажа всего тела пришёл домой и сказал: «Запиши ещё». 
+                        Говорит, что такой лёгкости в ногах не чувствовал лет десять. Теперь ходим вдвоём. 😄
+                    </p>
+                    <div class="review-date">— 3 июля</div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-quote">"</div>
+                    <p class="review-text">
+                        Редко пишу отзывы, но здесь действительно заслуживает. 
+                        Наталья — мастер с большой буквы, внимательная, пунктуальная, 
+                        всегда интересуется самочувствием после процедуры. 
+                        Рекомендую всем подругам и коллегам без исключения.
+                    </p>
+                    <div class="review-date">— 18 июня</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- === НОВЫЙ БЛОК: FAQ (АККОРДЕОН) === -->
+        <section class="section faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>Есть ли противопоказания к массажу?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Противопоказания есть только для вибрационного массажа: беременность и онкологические заболевания. Для всех остальных видов массажа (классический, антицеллюлитный, блейдд, лицо, спина, шейно-воротниковый) противопоказаний нет.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Как подготовиться к сеансу?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Рекомендуется приходить с чистой кожей, за 1–2 часа до сеанса не есть плотно. Пейте воду до и после массажа – это помогает выводить токсины.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Сколько процедур нужно для видимого результата?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Обычно эффект заметен уже после 3–5 сеансов. Для стойкого результата рекомендуется курс из 10–12 процедур.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Больно ли делать массаж?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Массаж не должен вызывать острую боль. Вы можете чувствовать приятное тепло, напряжение в прорабатываемых зонах, но это не боль.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Как записаться на массаж?</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Вы можете записаться через форму на сайте, написав в Instagram (@natamirmat) или ВКонтакте. Мы подберём удобное для вас время и ответим на все вопросы.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -409,28 +734,50 @@
         <section class="section contacts-section" id="contacts">
             <div class="container">
                 <h2 class="section-title">Контакты</h2>
+                
                 <div class="contact-card">
                     <div class="contact-label">Адрес</div>
                     <div class="contact-value">г. Киров, ул. Никитская, д. 146</div>
                     <div class="contact-note">Вход с торца слева, домофон 5</div>
                     <div class="contact-hint">Работаю по предварительной записи</div>
                 </div>
+
                 <div class="social-card">
                     <div class="social-card-title">Связаться со мной</div>
+                    
                     <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="social-link">
                         <div class="social-icon">📸</div>
-                        <div><div class="social-name">Instagram</div><div class="social-username">@natamirmat</div></div>
+                        <div>
+                            <div class="social-name">Instagram</div>
+                            <div class="social-username">@natamirmat</div>
+                        </div>
                     </a>
+                    
                     <a href="https://vk.ru/id578712934" target="_blank" rel="noopener noreferrer" class="social-link">
                         <div class="social-icon">💬</div>
-                        <div><div class="social-name">ВКонтакте</div><div class="social-username">Наталия Мурадян</div></div>
+                        <div>
+                            <div class="social-name">ВКонтакте</div>
+                            <div class="social-username">Наталия Мурадян</div>
+                        </div>
                     </a>
                 </div>
+                <!-- Карта -->
                 <div class="map-container">
-                    <iframe src="https://yandex.ru/map-widget/v1/?text=Киров%2C%20ул.%20Никитская%2C%20146&z=16" width="100%" height="300" frameborder="0" allowfullscreen="true" style="border-radius: 16px; border: 1px solid #e8ddd0;"></iframe>
+                    <iframe 
+                        src="https://yandex.ru/map-widget/v1/?text=Киров%2C%20ул.%20Никитская%2C%20146&z=16" 
+                        width="100%" 
+                        height="300" 
+                        frameborder="0" 
+                        allowfullscreen="true" 
+                        style="border-radius: 16px; border: 1px solid #e8ddd0;">
+                    </iframe>
                 </div>
+                
                 <div class="contact-message">
-                    <p class="contact-message-text">Напишите мне в Instagram или ВКонтакте - договоримся об удобном времени 💕</p>
+                    <p class="contact-message-text">
+                        Напишите мне в Instagram или ВКонтакте - договоримся об удобном времени 
+                        и отвечу на все вопросы 💕
+                    </p>
                 </div>
             </div>
         </section>
@@ -455,18 +802,20 @@
             <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Instagram">📸</a>
             <a href="https://vk.ru/id578712934" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ВКонтакте">💬</a>
         </div>
-        <div style="margin-top: 12px; font-size: 12px; color: #b8a99a;">
+                <div style="margin-top: 12px; font-size: 12px; color: #b8a99a;">
             <a href="privacy.html" style="text-decoration: underline;">Политика конфиденциальности</a>
         </div>
+        
         <div class="footer-copy">© 2026 КРАСИВА. Все права защищены.</div>
     </footer>
-
     <!-- Мобильная кнопка записи -->
-    <a href="#" class="mobile-cta js-open-modal">Записаться</a>
+    <a href="#" class="mobile-cta js-open-modal">
+        Записаться
+    </a>
+    
+    <script src="script.js?v=3"></script>
 
-    <script src="script.js?v=2"></script>
-
-    <!-- МОДАЛЬНОЕ ОКНО ЗАПИСИ (с добавленным временем) -->
+    <!-- Модальное окно записи -->
     <div class="modal-overlay" id="bookingModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -497,7 +846,6 @@
                     <label for="clientDate">Желаемая дата</label>
                     <input type="date" id="clientDate" name="date" required>
                 </div>
-                <!-- ✅ ДОБАВЛЕНО ПОЛЕ ВРЕМЕНИ -->
                 <div class="form-group">
                     <label for="clientTime">Желаемое время</label>
                     <input type="time" id="clientTime" name="time" required>
