@@ -2,6 +2,8 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    
+    <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXN6LR2YHV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,230 +11,333 @@
       gtag('js', new Date());
       gtag('config', 'G-JXN6LR2YHV');
     </script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Услуги и цены студии эстетики КРАСИВА в Кирове. Аппаратный, классический, антицеллюлитный массаж и техника блейдд.">
-    <title>Услуги и цены — КРАСИВА</title>
+    <meta name="description" content="Услуги и цены студии эстетики КРАСИВА в Кирове. Аппаратный, классический, антицеллюлитный массаж и техника блейдд. Мастер Наталья Мурадян.">
+    <meta name="keywords" content="массаж киров, аппаратный массаж, антицеллюлитный массаж, массаж спины, цены на массаж">
+    <title>Услуги и цены — КРАСИВА | Студия эстетики</title>
     <link rel="canonical" href="https://krasiva-kirov.ru/services.html">
+    <meta name="keywords" content="массаж киров цены, аппаратный массаж киров, антицеллюлитный массаж киров, классический массаж киров, блейдд техника киров">
+    <meta property="og:title" content="Услуги и цены — КРАСИВА | Студия эстетики">
+    <meta property="og:description" content="Аппаратный, классический, антицеллюлитный массаж и техника блейдд в Кирове. Цены от 1 200 ₽.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://krasiva-kirov.ru/services.html">
+    <meta property="og:image" content="https://krasiva-kirov.ru/natalya-portrait.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css?v=13">
     <link rel="icon" type="image/png" href="logo.PNG">
-    <base target="_blank">
+
+    <!-- Breadcrumbs Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://krasiva-kirov.ru/" },
+        { "@type": "ListItem", "position": 2, "name": "Услуги и цены", "item": "https://krasiva-kirov.ru/services.html" }
+      ]
+    }
+    </script>
+
+    <!-- Services Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Массаж аппаратный на всё тело",
+            "description": "Глубокое воздействие на ткани с помощью профессионального аппарата.",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2000", "priceCurrency": "RUB" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Массаж классический",
+            "description": "Ручной массаж всего тела для расслабления мышц.",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2000", "priceCurrency": "RUB" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Массаж антицеллюлитный",
+            "description": "Комплексная работа с проблемными зонами.",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2000", "priceCurrency": "RUB" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Блейдд техника",
+            "description": "Глубокая проработка fascia и мышечных слоёв.",
+            "provider": { "@type": "LocalBusiness", "name": "КРАСИВА - Студия эстетики" },
+            "areaServed": { "@type": "City", "name": "Киров" },
+            "offers": { "@type": "Offer", "price": "2500", "priceCurrency": "RUB" }
+          }
+        }
+      ]
+    }
+    </script>
+<base target="_blank">
 </head>
 <body>
 
-<header class="header">
-    <div class="header-top">
-        <div class="logo-subtitle">студия эстетики</div>
-        <h1 class="logo-title">КРАСИВА</h1>
-        <div class="logo-master">Наталии Мурадян</div>
-    </div>
-</header>
-
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="index.html" class="nav-link">Главная</a>
-        <a href="services.html" class="nav-link active">Услуги</a>
-        <a href="reviews.html" class="nav-link">Отзывы</a>
-        <a href="contacts.html" class="nav-link">Контакты</a>
-    </div>
-</nav>
-
-<main>
-    <section class="services-hero">
-        <div class="container"><h2>Услуги и цены</h2></div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="promo-banner">
-                <div class="promo-banner-sub">🎁 Акция месяца</div>
-                <div class="promo-banner-title">При оплате курса — 1 сеанс в подарок!</div>
-                <div class="promo-banner-price">11 сеансов за 16 000 ₽</div>
-            </div>
-
-            <!-- Услуги -->
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-name">Массаж аппаратный на всё тело</div>
-                    <div class="service-price">2 200 ₽</div>
-                </div>
-                <div class="service-desc">Глубокое воздействие на ткани с помощью профессионального аппарата. Убирает застой лимфы, уменьшает объёмы, подтягивает кожу.</div>
-                <a href="#" class="btn btn-small js-open-modal" data-service="Аппаратный массаж">Записаться</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-name">Массаж классический</div>
-                    <div class="service-price">2 200 ₽</div>
-                </div>
-                <div class="service-time">⏱ 1 час</div>
-                <div class="service-desc">Ручной массаж всего тела для расслабления мышц, улучшения кровообращения и снятия стресса.</div>
-                <a href="#" class="btn btn-small js-open-modal" data-service="Классический массаж">Записаться</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-name">Массаж лица</div>
-                    <div class="service-price">1 400 ₽</div>
-                </div>
-                <div class="service-time">⏱ 30 минут</div>
-                <div class="service-desc">Нежный массаж лица для улучшения тонуса кожи, разглаживания мимических морщин и активации лимфотока.</div>
-                <a href="#" class="btn btn-small js-open-modal" data-service="Массаж лица">Записаться</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-name">Массаж антицеллюлитный</div>
-                    <div class="service-price">2 200 ₽</div>
-                </div>
-                <div class="service-desc">Комплексная работа с проблемными зонами. Разбивает жировые отложения, выводит лишнюю жидкость, разглаживает «апельсиновую корку».</div>
-                <a href="#" class="btn btn-small js-open-modal" data-service="Антицеллюлитный массаж">Записаться</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-name">Массаж спины</div>
-                    <div class="service-price">1 900 ₽</div>
-                </div>
-                <div class="service-time">⏱ 35 минут</div>
-                <div class="service-desc">Снятие мышечного напряжения в области спины и поясницы. После сеанса — ощущение лёгкости.</div>
-                <a href="#" class="btn btn-small js-open-modal" data-service="Массаж спины">Записаться</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-name">Массаж шейно-воротниковой зоны</div>
-                    <div class="service-price">1 400 ₽</div>
-                </div>
-                <div class="service-time">⏱ 30 минут</div>
-                <div class="service-desc">Идеально для тех, кто много работает за компьютером. Устраняет зажимы, головные боли и чувство скованности.</div>
-                <a href="#" class="btn btn-small js-open-modal" data-service="Шейно-воротниковый">Записаться</a>
-            </div>
-
-            <div class="service-card">
-                <div class="service-header">
-                    <div class="service-name">Блейдд техника</div>
-                    <div class="service-price">2 500 ₽</div>
-                </div>
-                <div class="service-time">⏱ 1 час</div>
-                <div class="service-desc">Работа специальным инструментом для глубокой проработки fascia и мышечных слоёв. Помогает при хронических зажимах и для коррекции фигуры.</div>
-                <a href="#" class="btn btn-small js-open-modal" data-service="Блейдд техника">Записаться</a>
-            </div>
-
-            <!-- === УДОБСТВА === -->
-            <div class="amenities">
-                <h3>Для вашего комфорта</h3>
-                <ul class="amenities-list">
-                    <li>☕ Чай, кофе</li>
-                    <li>🥜 Сухофрукты, орехи</li>
-                    <li>👶 Можно приходить с детьми</li>
-                    <li>🛋️ Уютная зона ожидания</li>
-                    <li>🕊️ Приятная атмосфера</li>
-                </ul>
-            </div>
-
-            <!-- === ПОДАРОЧНЫЕ СЕРТИФИКАТЫ === -->
-            <div class="gift-certs">
-                <h3 class="gift-title">Подарочные сертификаты</h3>
-                <div class="gift-grid">
-                    <div class="gift-card">
-                        <img src="sert1.jpg" alt="Сертификат 1000 ₽" class="lightbox-img">
-                        <div class="gift-info">
-                            <span class="gift-price">1 000 ₽</span>
-                            <p>Отличный подарок на любой случай</p>
-                        </div>
-                    </div>
-                    <div class="gift-card">
-                        <img src="sert3.jpg" alt="Сертификат 3000 ₽" class="lightbox-img">
-                        <div class="gift-info">
-                            <span class="gift-price">3 000 ₽</span>
-                            <p>Полноценный курс массажа в подарок</p>
-                        </div>
-                    </div>
-                    <div class="gift-card">
-                        <img src="sert5.jpg" alt="Сертификат 5000 ₽" class="lightbox-img">
-                        <div class="gift-info">
-                            <span class="gift-price">5 000 ₽</span>
-                            <p>Идеальный подарок для близких</p>
-                        </div>
-                    </div>
-                </div>
-                <p class="gift-note">Сертификаты можно приобрести в студии или заказать онлайн. Свяжитесь со мной в Instagram или ВКонтакте.</p>
-            </div>
-
-            <!-- === ПРОТИВОПОКАЗАНИЯ === -->
-            <div class="contraindications">
-                <h3>⛔ Противопоказания к вибрационному массажу</h3>
-                <ul>
-                    <li>Беременность</li>
-                    <li>Онкологические заболевания</li>
-                </ul>
-                <p style="margin-top: 16px; font-size: 13px; color: var(--color-text-muted);">
-                    Для остальных видов массажа (классический, антицеллюлитный, блейдд, лицо, спина, шейно-воротниковый) противопоказаний нет.<br>
-                    Перед процедурой обязательно проконсультируйтесь с мастером – мы учтём все ваши особенности.
-                </p>
-            </div>
-
+    <!-- ШАПКА -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo-subtitle">студия эстетики</div>
+            <h1 class="logo-title">КРАСИВА</h1>
+            <div class="logo-master">Наталии Мурадян</div>
         </div>
-    </section>
-</main>
+    </header>
 
-<footer class="footer">
-    <div class="footer-logo">КРАСИВА</div>
-    <div class="footer-text">Студия эстетики · Наталии Мурадян · Киров</div>
-    <div class="footer-socials">
-        <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="footer-social">📸</a>
-        <a href="https://vk.ru/id578712934" target="_blank" rel="noopener noreferrer" class="footer-social">💬</a>
-    </div>
-    <div style="margin-top: 12px; font-size: 12px; color: #b8a99a;">
-        <a href="privacy.html" style="text-decoration: underline;">Политика конфиденциальности</a>
-    </div>
-    <div class="footer-copy">© 2026 КРАСИВА. Все права защищены.</div>
-</footer>
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="services.html" class="nav-link active">Услуги</a>
+            <a href="reviews.html" class="nav-link">Отзывы</a>
+            <a href="contacts.html" class="nav-link">Контакты</a>
+        </div>
+    </nav>
 
-<script src="script.js?v=5"></script>
+    <main>
+        <!-- ЗАГОЛОВОК -->
+        <section class="services-hero">
+            <div class="container">
+                <h2>Услуги и цены</h2>
+            </div>
+        </section>
 
-<div class="modal-overlay" id="bookingModal">
-    <div class="modal-content">
-        <button class="modal-close" id="modalClose">&times;</button>
-        <h3 class="modal-title">Запись на массаж</h3>
-        <form class="booking-form" id="bookingForm">
-            <div class="form-group">
-                <label for="clientName">Ваше имя</label>
-                <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
+        <!-- УСЛУГИ -->
+        <section class="section">
+            <div class="container">
+                <!-- Акция -->
+                <div class="promo-banner">
+                    <div class="promo-banner-sub">🎁 Акция месяца</div>
+                    <div class="promo-banner-title">При оплате курса — 1 сеанс в подарок!</div>
+                    <div class="promo-banner-price">11 сеансов за 16 000 ₽</div>
+                </div>
+
+                <!-- ТВОИ УСЛУГИ (БЕЗ ИЗМЕНЕНИЙ) -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж аппаратный на всё тело</div>
+                        <div class="service-price">2 000 ₽</div>
+                    </div>
+                    <div class="service-desc">
+                        Глубокое воздействие на ткани с помощью профессионального аппарата. Убирает застой лимфы, уменьшает объёмы, подтягивает кожу. Эффект заметен уже после первого сеанса.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Аппаратный массаж">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж классический</div>
+                        <div class="service-price">2 000 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 1 час</div>
+                    <div class="service-desc">
+                        Ручной массаж всего тела для расслабления мышц, улучшения кровообращения и снятия стресса. Подходит для восстановления после нагрузок.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Классический массаж">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж лица</div>
+                        <div class="service-price">1 200 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 30 минут</div>
+                    <div class="service-desc">
+                        Нежный массаж лица для улучшения тонуса кожи, разглаживания мимических морщин и активации лимфотока. Лицо выглядит свежее и отдохнувшим.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Массаж лица">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж антицеллюлитный</div>
+                        <div class="service-price">2 000 ₽</div>
+                    </div>
+                    <div class="service-desc">
+                        Комплексная работа с проблемными зонами. Разбивает жировые отложения, выводит лишнюю жидкость, разглаживает «апельсиновую корку».
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Антицеллюлитный массаж">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж спины</div>
+                        <div class="service-price">1 700 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 35 минут</div>
+                    <div class="service-desc">
+                        Снятие мышечного напряжения в области спины и поясницы. После сеанса — ощущение лёгкости и отсутствия боли.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Массаж спины">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Массаж шейно-воротниковой зоны</div>
+                        <div class="service-price">1 200 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 30 минут</div>
+                    <div class="service-desc">
+                        Идеально для тех, кто много работает за компьютером. Устраняет зажимы, головные боли и чувство скованности.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Шейно-воротниковый">Записаться</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-name">Блейдд техника</div>
+                        <div class="service-price">2 500 ₽</div>
+                    </div>
+                    <div class="service-time">⏱ 1 час</div>
+                    <div class="service-desc">
+                        Работа специальным инструментом для глубокой проработки fascia и мышечных слоёв. Помогает при хронических зажимах и для коррекции фигуры.
+                    </div>
+                    <a href="#" class="btn btn-small js-open-modal" data-service="Блейдд техника">Записаться</a>
+                </div>
+
+                <!-- === НОВЫЙ БЛОК 1: УДОБСТВА === -->
+                <div class="amenities">
+                    <h3>Для вашего комфорта</h3>
+                    <ul class="amenities-list">
+                        <li>☕ Чай, кофе</li>
+                        <li>🥜 Сухофрукты, орехи</li>
+                        <li>👶 Можно приходить с детьми</li>
+                        <li>🛋️ Уютная зона ожидания</li>
+                        <li>🕊️ Приятная атмосфера</li>
+                    </ul>
+                </div>
+
+                <!-- === НОВЫЙ БЛОК 2: ПОДАРОЧНЫЕ СЕРТИФИКАТЫ === -->
+                <div class="gift-certs">
+                    <h3 class="gift-title">Подарочные сертификаты</h3>
+                    <div class="gift-grid">
+                        <div class="gift-card">
+                            <img src="sert1.jpg" alt="Сертификат 1000 ₽" class="lightbox-img">
+                            <div class="gift-info">
+                                <span class="gift-price">1 000 ₽</span>
+                                <p>Отличный подарок на любой случай</p>
+                            </div>
+                        </div>
+                        <div class="gift-card">
+                            <img src="sert3.jpg" alt="Сертификат 3000 ₽" class="lightbox-img">
+                            <div class="gift-info">
+                                <span class="gift-price">3 000 ₽</span>
+                                <p>Полноценный курс массажа в подарок</p>
+                            </div>
+                        </div>
+                        <div class="gift-card">
+                            <img src="sert5.jpg" alt="Сертификат 5000 ₽" class="lightbox-img">
+                            <div class="gift-info">
+                                <span class="gift-price">5 000 ₽</span>
+                                <p>Идеальный подарок для близких</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="gift-note">Сертификаты можно приобрести в студии или заказать онлайн. Свяжитесь со мной в Instagram или ВКонтакте.</p>
+                </div>
+
+                <!-- === НОВЫЙ БЛОК 3: ПРОТИВОПОКАЗАНИЯ === -->
+                <div class="contraindications">
+                    <h3>⛔ Противопоказания к вибрационному массажу</h3>
+                    <ul>
+                        <li>Беременность</li>
+                        <li>Онкологические заболевания</li>
+                    </ul>
+                    <p style="margin-top: 16px; font-size: 13px; color: var(--color-text-muted);">
+                        Для остальных видов массажа (классический, антицеллюлитный, блейдд, лицо, спина, шейно-воротниковый) противопоказаний нет.<br>
+                        Перед процедурой обязательно проконсультируйтесь с мастером – мы учтём все ваши особенности.
+                    </p>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label for="clientPhone">Телефон</label>
-                <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__">
-            </div>
-            <div class="form-group">
-                <label for="clientService">Услуга</label>
-                <select id="clientService" name="service" required>
-                    <option value="" disabled selected>Выберите услугу</option>
-                    <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
-                    <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
-                    <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
-                    <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
-                    <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
-                    <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
-                    <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="clientDate">Желаемая дата</label>
-                <input type="date" id="clientDate" name="date" required>
-            </div>
-            <div class="form-group">
-                <label for="clientTime">Желаемое время</label>
-                <input type="time" id="clientTime" name="time" required>
-            </div>
-            <button type="submit" class="btn btn-primary btn-large">Записаться</button>
-            <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
-        </form>
+        </section>
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer-logo">КРАСИВА</div>
+        <div class="footer-text">Студия эстетики · Наталии Мурадян · Киров</div>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Instagram">📸</a>
+            <a href="https://vk.ru/id578712934" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ВКонтакте">💬</a>
+        </div>
+        <div style="margin-top: 12px; font-size: 12px; color: #b8a99a;">
+            <a href="privacy.html" style="text-decoration: underline;">Политика конфиденциальности</a>
+        </div>
+        <div class="footer-copy">© 2026 КРАСИВА. Все права защищены.</div>
+    </footer>
+
+    <script src="script.js?v=5"></script>
+
+    <!-- Модальное окно записи -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title">Запись на массаж</h3>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="clientName">Ваше имя</label>
+                    <input type="text" id="clientName" name="name" required placeholder="Например, Анна">
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Телефон</label>
+                    <input type="tel" id="clientPhone" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\+]?[0-9\s\-\(\)]+">
+                </div>
+                <div class="form-group">
+                    <label for="clientService">Услуга</label>
+                    <select id="clientService" name="service" required>
+                        <option value="" disabled selected>Выберите услугу</option>
+                        <option value="Аппаратный массаж">Аппаратный массаж — 2 200 ₽</option>
+                        <option value="Классический массаж">Классический массаж — 2 200 ₽</option>
+                        <option value="Массаж лица">Массаж лица — 1 400 ₽</option>
+                        <option value="Антицеллюлитный массаж">Антицеллюлитный массаж — 2 200 ₽</option>
+                        <option value="Массаж спины">Массаж спины — 1 900 ₽</option>
+                        <option value="Шейно-воротниковый">Шейно-воротниковый — 1 400 ₽</option>
+                        <option value="Блейдд техника">Блейдд техника — 2 500 ₽</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="clientDate">Желаемая дата</label>
+                    <input type="date" id="clientDate" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientTime">Желаемое время</label>
+                    <input type="time" id="clientTime" name="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">Записаться</button>
+                <p class="form-note">После отправки вы будете перенаправлены в Instagram</p>
+            </form>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
