@@ -1360,3 +1360,214 @@ a {
         font-size: 20px;
     }
 }
+
+/* ============================================
+   НОВЫЕ СТИЛИ: ДОКУМЕНТЫ, СЕРТИФИКАТЫ, УДОБСТВА
+   ============================================ */
+
+/* --- Документы мастера --- */
+.about-docs {
+    margin-top: 40px;
+    background: var(--color-bg-light);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-border-light);
+}
+
+.docs-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.docs-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.doc-item {
+    width: 200px;
+    text-align: center;
+    background: var(--color-bg-cream);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    border: 1px solid var(--color-border-light);
+    transition: var(--transition);
+}
+
+.doc-item:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.doc-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.doc-item figcaption {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .docs-grid {
+        gap: 12px;
+    }
+    .doc-item {
+        width: 150px;
+    }
+    .doc-item img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .doc-item {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* --- Подарочные сертификаты --- */
+.gift-certs {
+    margin-top: 40px;
+    background: var(--color-bg-light);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--color-border-light);
+}
+
+.gift-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.gift-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.gift-card {
+    background: var(--color-bg-cream);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+    border: 1px solid var(--color-border-light);
+    transition: var(--transition);
+}
+
+.gift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.gift-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.gift-info {
+    margin-top: 12px;
+}
+
+.gift-price {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+}
+
+.gift-info p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.gift-note {
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin-top: 20px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .gift-card {
+        width: 160px;
+    }
+    .gift-card img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gift-card {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* --- Удобства в студии --- */
+.amenities {
+    background: var(--color-bg-light);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-top: 30px;
+    border: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.amenities h3 {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.amenities-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+}
+
+.amenities-list li {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 600px) {
+    .amenities-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}
