@@ -297,10 +297,6 @@ a {
     background: linear-gradient(180deg, var(--color-bg-sand) 0%, var(--color-bg-parchment) 100%);
 }
 
-.faq-section {
-    background: linear-gradient(180deg, var(--color-bg-cream) 0%, var(--color-bg-linen) 100%);
-}
-
 .section-title {
     font-family: var(--font-heading);
     font-size: 28px;
@@ -436,105 +432,6 @@ a {
 
 @media (max-width: 480px) {
     .doc-item { width: 100%; max-width: 200px; }
-}
-
-/* --- Удобства --- */
-.amenities {
-    background: var(--color-bg-light);
-    border-radius: var(--radius);
-    padding: 28px 32px;
-    margin-top: 30px;
-    border: 1px solid var(--color-border-light);
-    box-shadow: var(--shadow-soft);
-}
-
-.amenities h3 {
-    font-family: var(--font-heading);
-    font-size: 22px;
-    color: var(--color-primary);
-    text-align: center;
-    margin-bottom: 16px;
-}
-
-.amenities-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 28px;
-}
-
-.amenities-list li {
-    font-size: 15px;
-    color: var(--color-text-muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-@media (max-width: 600px) {
-    .amenities-list { flex-direction: column; align-items: center; gap: 8px; }
-}
-
-/* --- Противопоказания (аккордеон) --- */
-.faq-list {
-    max-width: 800px;
-    margin: 40px auto 0;
-}
-
-.faq-item {
-    background: var(--color-bg-light);
-    border-radius: var(--radius-sm);
-    margin-bottom: 12px;
-    border: 1px solid var(--color-border-light);
-    overflow: hidden;
-    transition: var(--transition);
-}
-
-.faq-item:hover {
-    border-color: var(--color-accent-deep);
-}
-
-.faq-question {
-    padding: 18px 24px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 500;
-    color: var(--color-primary);
-    font-size: 16px;
-    background: var(--color-bg-cream);
-    transition: var(--transition);
-}
-
-.faq-question:hover {
-    background: var(--color-accent-light);
-}
-
-.faq-question .faq-icon {
-    font-size: 20px;
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(180deg);
-}
-
-.faq-answer {
-    padding: 0 24px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-    color: var(--color-text-muted);
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.faq-item.active .faq-answer {
-    padding: 18px 24px 24px;
-    max-height: 500px;
 }
 
 /* --- ПРЕИМУЩЕСТВА --- */
