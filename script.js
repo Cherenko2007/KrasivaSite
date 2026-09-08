@@ -112,32 +112,33 @@ document.addEventListener('DOMContentLoaded', function () {
         const burgerStyle = document.createElement('style');
         burgerStyle.textContent = `
             .nav-burger {
-                display: block;
-                width: 100%;
-                padding: 12px;
-                background: transparent;
-                border: none;
-                font-size: 20px;
-                color: #6b5b4f;
-                cursor: pointer;
-                text-align: center;
-            }
-            .nav-container {
                 display: none;
-                flex-direction: column;
-                gap: 6px;
-                padding: 10px;
             }
-            .nav-container.open {
-                display: flex;
-            }
-            .nav-link {
-                width: 100%;
-                text-align: center;
-            }
-            @media (min-width: 769px) {
-                .nav-burger { display: none !important; }
-                .nav-container { display: flex !important; flex-direction: row; }
+            @media (max-width: 768px) {
+                .nav-burger {
+                    display: block;
+                    width: 100%;
+                    padding: 12px;
+                    background: transparent;
+                    border: none;
+                    font-size: 20px;
+                    color: #6b5b4f;
+                    cursor: pointer;
+                    text-align: center;
+                }
+                .nav-container {
+                    display: none;
+                    flex-direction: column;
+                    gap: 6px;
+                    padding: 10px;
+                }
+                .nav-container.open {
+                    display: flex;
+                }
+                .nav-link {
+                    width: 100%;
+                    text-align: center;
+                }
             }
         `;
         document.head.appendChild(burgerStyle);
