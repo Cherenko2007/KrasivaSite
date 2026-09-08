@@ -1,6 +1,6 @@
 /* ============================================
    КРАСИВА — Студия эстетики
-   ПОЛНЫЙ JS (с lightbox)
+   ПОЛНЫЙ JS (ОРИГИНАЛ + LIGHTBOX)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -189,16 +189,17 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('✨ КРАСИВА — сайт загружен!');
 
     /* ============================================
-       МОДАЛЬНОЕ ОКНО ЗАПИСИ
+       МОДАЛЬНОЕ ОКНО ЗАПИСИ + ОТПРАВКА В TELEGRAM
        ============================================ */
 
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec'; // ЗАМЕНИ НА СВОЙ URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec';
 
     const modal = document.getElementById('bookingModal');
     const modalClose = document.getElementById('modalClose');
     const bookingForm = document.getElementById('bookingForm');
     const serviceSelect = document.getElementById('clientService');
 
+    // Открытие модалки
     document.querySelectorAll('.js-open-modal').forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -214,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Закрытие модалки
     function closeModal() {
         if (!modal) return;
         modal.classList.remove('active');
@@ -239,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Универсальная функция отправки
     async function submitForm(form, submitBtn, isEmbedded) {
         const originalText = submitBtn ? submitBtn.textContent : 'Записаться';
 
@@ -319,6 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Модальная форма
     if (bookingForm) {
         bookingForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -327,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Встроенная форма
     const embeddedForm = document.getElementById('embeddedBookingForm');
     if (embeddedForm) {
         embeddedForm.addEventListener('submit', function (e) {
@@ -340,11 +345,16 @@ document.addEventListener('DOMContentLoaded', function () {
        FAQ АККОРДЕОН
        ============================================ */
     const faqItems = document.querySelectorAll('.faq-item');
+    
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', function() {
             const isActive = item.classList.contains('active');
+            
+            // Закрываем все
             faqItems.forEach(el => el.classList.remove('active'));
+            
+            // Открываем текущий, если он был закрыт
             if (!isActive) {
                 item.classList.add('active');
             }
@@ -355,6 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
        COOKIE БАННЕР
        ============================================ */
     function createCookieBanner() {
+        // Проверяем, согласился ли пользователь уже
         if (localStorage.getItem('cookieAccepted') === 'true') {
             return;
         }
@@ -378,45 +389,53 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(createCookieBanner, 1000);
 
     /* ============================================
-       LIGHTBOX — открытие фото на весь экран
+       LIGHTBOX (НОВЫЙ БЛОК)
        ============================================ */
-    const overlay = document.createElement('div');
-    overlay.className = 'lightbox-overlay';
-    overlay.id = 'lightboxOverlay';
+    (function() {
+        // Проверяем, есть ли уже overlay, чтобы не дублировать
+        if (document.querySelector('.lightbox-overlay')) return;
 
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'lightbox-close';
-    closeBtn.innerHTML = '&times;';
-    overlay.appendChild(closeBtn);
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.id = 'lightboxOverlay';
 
-    const img = document.createElement('img');
-    img.id = 'lightboxImg';
-    overlay.appendChild(img);
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'lightbox-close';
+        closeBtn.innerHTML = '&times;';
+        overlay.appendChild(closeBtn);
 
-    document.body.appendChild(overlay);
+        const img = document.createElement('img');
+        img.id = 'lightboxImg';
+        overlay.appendChild(img);
 
-    document.querySelectorAll('.lightbox-img').forEach(function(el) {
-        el.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const src = this.getAttribute('src');
-            document.getElementById('lightboxImg').setAttribute('src', src);
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        document.body.appendChild(overlay);
+
+        // Открытие при клике на .lightbox-img
+        document.querySelectorAll('.lightbox-img').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const src = this.getAttribute('src');
+                document.getElementById('lightboxImg').setAttribute('src', src);
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
         });
-    });
 
-    overlay.addEventListener('click', function(e) {
-        if (e.target === overlay || e.target === closeBtn || e.target.closest('.lightbox-close')) {
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
+        // Закрытие
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay || e.target === closeBtn || e.target.closest('.lightbox-close')) {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
 
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && overlay.classList.contains('active')) {
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
+        // Закрытие по Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    })();
 
 });
