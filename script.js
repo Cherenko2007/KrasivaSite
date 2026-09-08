@@ -1,6 +1,6 @@
 /* ============================================
    КРАСИВА — Студия эстетики
-   ПОЛНЫЙ JS (ОРИГИНАЛ + LIGHTBOX)
+   ПОЛНЫЙ JS (ОРИГИНАЛ + LIGHTBOX + FAQ)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -341,6 +341,23 @@ document.addEventListener('DOMContentLoaded', function () {
             submitForm(embeddedForm, btn, true);
         });
     }
+
+    /* ============================================
+       АККОРДЕОН FAQ
+       ============================================ */
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', function () {
+            const isActive = item.classList.contains('active');
+            // Закрываем все
+            faqItems.forEach(el => el.classList.remove('active'));
+            // Открываем текущий, если он был закрыт
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
 
     /* ============================================
        COOKIE БАННЕР
