@@ -343,30 +343,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ============================================
-   КРАСИВА — JS v6 (с аккордеоном)
-   ============================================ */
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    /* --- АККОРДЕОН FAQ --- */
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', function () {
-            const isActive = item.classList.contains('active');
-            // Закрываем все
-            faqItems.forEach(el => el.classList.remove('active'));
-            // Открываем текущий, если он был закрыт
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
-    });
-    /* ============================================
        COOKIE БАННЕР
        ============================================ */
     function createCookieBanner() {
-        // Проверяем, согласился ли пользователь уже
         if (localStorage.getItem('cookieAccepted') === 'true') {
             return;
         }
@@ -390,10 +369,9 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(createCookieBanner, 1000);
 
     /* ============================================
-       LIGHTBOX (НОВЫЙ БЛОК)
+       LIGHTBOX
        ============================================ */
     (function() {
-        // Проверяем, есть ли уже overlay, чтобы не дублировать
         if (document.querySelector('.lightbox-overlay')) return;
 
         const overlay = document.createElement('div');
@@ -411,7 +389,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.body.appendChild(overlay);
 
-        // Открытие при клике на .lightbox-img
         document.querySelectorAll('.lightbox-img').forEach(function(el) {
             el.addEventListener('click', function(e) {
                 e.stopPropagation();
@@ -422,7 +399,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        // Закрытие
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay || e.target === closeBtn || e.target.closest('.lightbox-close')) {
                 overlay.classList.remove('active');
@@ -430,7 +406,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Закрытие по Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && overlay.classList.contains('active')) {
                 overlay.classList.remove('active');
