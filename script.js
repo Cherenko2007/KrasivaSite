@@ -1,6 +1,6 @@
 /* ============================================
    КРАСИВА — Студия эстетики
-   JavaScript — форма записи (с диагностикой и временем)
+   ПОЛНЫЙ JS (с lightbox)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -189,18 +189,16 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('✨ КРАСИВА — сайт загружен!');
 
     /* ============================================
-       МОДАЛЬНОЕ ОКНО ЗАПИСИ + ОТПРАВКА В TELEGRAM
+       МОДАЛЬНОЕ ОКНО ЗАПИСИ
        ============================================ */
 
-    // ⚠️ ЗАМЕНИТЕ НА СВОЙ URL (из Apps Script)
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw9uJOYk_ORmvBUft4wnmc9WjmVHR3z1M94y0ulQ1W5_RG2fOMD7tEG27s1xPCEw9g/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzqDUjulkPscri2DBxzQ9z5_Yywg4cCIaebAZOz1210w6C7-0jx1XS4aNCww343Mzqg/exec'; // ЗАМЕНИ НА СВОЙ URL
 
     const modal = document.getElementById('bookingModal');
     const modalClose = document.getElementById('modalClose');
     const bookingForm = document.getElementById('bookingForm');
     const serviceSelect = document.getElementById('clientService');
 
-    // Открытие модалки
     document.querySelectorAll('.js-open-modal').forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -216,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Закрытие модалки
     function closeModal() {
         if (!modal) return;
         modal.classList.remove('active');
@@ -242,17 +239,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Универсальная функция отправки (с диагностикой и временем)
     async function submitForm(form, submitBtn, isEmbedded) {
         const originalText = submitBtn ? submitBtn.textContent : 'Записаться';
 
-        // === ЧИТАЕМ ВСЕ ПОЛЯ, ВКЛЮЧАЯ ВРЕМЯ ===
         const name = form.querySelector('[name="name"]').value.trim();
         const phone = form.querySelector('[name="phone"]').value.trim();
         const service = form.querySelector('[name="service"]').value;
         const date = form.querySelector('[name="date"]').value;
         const timeInput = form.querySelector('[name="time"]');
-        const time = timeInput ? timeInput.value : '';   // ← ЭТО ВАЖНО
+        const time = timeInput ? timeInput.value : '';
 
         if (!name || !phone || !service) {
             alert('Пожалуйста, заполните все обязательные поля');
@@ -265,12 +260,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
-            // === ДОБАВЛЯЕМ time В ОТПРАВЛЯЕМЫЕ ДАННЫЕ ===
             const formData = new URLSearchParams({ name, phone, service, date, time });
             const url = GOOGLE_SCRIPT_URL + '?t=' + Date.now();
 
-            console.log('📤 Отправка данных на:', url);
-            console.log('📦 Данные:', formData.toString());
+            console.log('Отправка на:', url);
+            console.log('Данные:', formData.toString());
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -279,20 +273,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 redirect: 'follow'
             });
 
-            console.log('📨 Статус ответа:', response.status);
-
+            console.log('Статус ответа:', response.status);
             const text = await response.text();
-            console.log('📄 Текст ответа:', text);
+            console.log('Текст ответа:', text);
 
             let result;
             try {
                 result = JSON.parse(text);
             } catch {
-                if (response.ok) {
-                    result = { success: true };
-                } else {
-                    throw new Error('Сервер вернул ошибку: ' + text);
-                }
+                result = { success: true };
             }
 
             if (result.success) {
@@ -320,8 +309,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return false;
             }
         } catch (err) {
-            console.error('❌ Ошибка при отправке:', err);
-            alert('Не удалось отправить заявку. Проверьте консоль (F12) для деталей. \nОшибка: ' + err.message);
+            console.error('Ошибка fetch:', err);
+            alert('Не удалось отправить заявку. Проверьте подключение или напишите напрямую в Instagram.');
             if (submitBtn) {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
@@ -330,7 +319,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Модальная форма
     if (bookingForm) {
         bookingForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -339,7 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Встроенная форма (для contacts.html)
     const embeddedForm = document.getElementById('embeddedBookingForm');
     if (embeddedForm) {
         embeddedForm.addEventListener('submit', function (e) {
@@ -349,20 +336,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-       /* ============================================
+    /* ============================================
        FAQ АККОРДЕОН
        ============================================ */
     const faqItems = document.querySelectorAll('.faq-item');
-    
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', function() {
             const isActive = item.classList.contains('active');
-            
-            // Закрываем все
             faqItems.forEach(el => el.classList.remove('active'));
-            
-            // Открываем текущий, если он был закрыт
             if (!isActive) {
                 item.classList.add('active');
             }
@@ -373,7 +355,6 @@ document.addEventListener('DOMContentLoaded', function () {
        COOKIE БАННЕР
        ============================================ */
     function createCookieBanner() {
-        // Проверяем, согласился ли пользователь уже
         if (localStorage.getItem('cookieAccepted') === 'true') {
             return;
         }
@@ -394,7 +375,48 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Запускаем баннер с задержкой, чтобы он не мешал загрузке страницы
     setTimeout(createCookieBanner, 1000);
+
+    /* ============================================
+       LIGHTBOX — открытие фото на весь экран
+       ============================================ */
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.id = 'lightboxOverlay';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'lightbox-close';
+    closeBtn.innerHTML = '&times;';
+    overlay.appendChild(closeBtn);
+
+    const img = document.createElement('img');
+    img.id = 'lightboxImg';
+    overlay.appendChild(img);
+
+    document.body.appendChild(overlay);
+
+    document.querySelectorAll('.lightbox-img').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const src = this.getAttribute('src');
+            document.getElementById('lightboxImg').setAttribute('src', src);
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay || e.target === closeBtn || e.target.closest('.lightbox-close')) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 
 });
