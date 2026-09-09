@@ -21,6 +21,8 @@
     <meta name="author" content="Наталия Мурадян">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://krasiva-kirov.ru/">
+    <link rel="alternate" hreflang="ru" href="https://krasiva-kirov.ru/" />
+    <link rel="alternate" hreflang="en" href="https://krasiva-kirov.ru/en.html" />
     
     <!-- Open Graph -->
     <meta property="og:title" content="КРАСИВА - Студия эстетики | Массаж в Кирове">
@@ -45,7 +47,7 @@
     
     <link rel="stylesheet" href="style.css?v=13">
 
-    <!-- Schema.org WebSite -->
+    <!-- Schema.org (оставляем как есть) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -60,7 +62,6 @@
     }
     </script>
 
-    <!-- Schema.org Breadcrumbs -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -74,7 +75,6 @@
     }
     </script>
 
-    <!-- Schema.org Services -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -132,7 +132,6 @@
     }
     </script>
 
-    <!-- Schema.org LocalBusiness + Reviews -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -249,7 +248,6 @@
             for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
             k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
         })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111903801', 'ym');
-
         ym(111903801, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/111903801" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -261,6 +259,13 @@
     <!-- ШАПКА -->
     <header class="header" id="home">
         <div class="header-top">
+            <!-- ====== ПЕРЕКЛЮЧАТЕЛЬ ====== -->
+            <div class="language-switcher">
+                <a href="/" class="lang-link active">RU</a>
+                <span class="lang-divider">|</span>
+                <a href="en.html" class="lang-link">EN</a>
+            </div>
+            <!-- ============================ -->
             <div class="logo-subtitle">студия эстетики</div>
             <h1 class="logo-title">КРАСИВА</h1>
             <div class="logo-master">Наталии Мурадян</div>
@@ -400,7 +405,7 @@
                     <div class="promo-banner-price">11 сеансов за 16 000 ₽</div>
                 </div>
 
-                <!-- Список услуг -->
+                <!-- Список услуг (такой же, как у вас, не меняем) -->
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-name">Массаж аппаратный на всё тело</div>
@@ -483,7 +488,7 @@
                     <a href="#" class="btn btn-small js-open-modal" data-service="Блейдд техника">Записаться</a>
                 </div>
 
-                <!-- === ПОДАРОЧНЫЕ СЕРТИФИКАТЫ === -->
+                <!-- Подарочные сертификаты -->
                 <div class="service-card">
                     <div class="service-header">
                         <div class="service-name">🎁 Подарочный сертификат — 1 000 ₽</div>
@@ -520,7 +525,7 @@
             </div>
         </section>
 
-                <!-- РЕЗУЛЬТАТЫ ДО/ПОСЛЕ -->
+        <!-- РЕЗУЛЬТАТЫ ДО/ПОСЛЕ -->
         <section class="section results-section" id="results">
             <div class="container">
                 <h2 class="section-title">Результаты наших клиентов</h2>
@@ -543,7 +548,6 @@
             <div class="container">
                 <h2 class="section-title">Отзывы клиентов о массаже</h2>
                 
-                <!-- Кнопки -->
                 <div class="review-buttons">
                     <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="review-btn">
                         ✍️ Оставить отзыв в Instagram
@@ -553,6 +557,7 @@
                     </a>
                 </div>
 
+                <!-- Все ваши отзывы (оставляем как есть) -->
                 <div class="review-card">
                     <div class="review-quote">"</div>
                     <p class="review-text">
@@ -706,12 +711,11 @@
             </div>
         </section>
 
-        <!-- ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (FAQ) -->
+        <!-- FAQ -->
         <section class="section faq-section" id="faq">
             <div class="container">
                 <h2 class="section-title">Часто задаваемые вопросы</h2>
                 <div class="faq-list">
-                    <!-- Вопрос 1 -->
                     <div class="faq-item active">
                         <div class="faq-question">
                             <span>Есть ли противопоказания к массажу?</span>
@@ -722,8 +726,6 @@
                             <p>Для всех остальных видов массажа (классический, антицеллюлитный, блейдд, лицо, спина, шейно-воротниковый) противопоказаний нет.</p>
                         </div>
                     </div>
-
-                    <!-- Вопрос 2 -->
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>Как подготовиться к сеансу?</span>
@@ -733,8 +735,6 @@
                             <p>Рекомендуется приходить с чистой кожей, за 1–2 часа до сеанса не есть плотно. Пейте воду до и после массажа – это помогает выводить токсины. Если у вас есть медицинские справки или рекомендации врача – возьмите их с собой.</p>
                         </div>
                     </div>
-
-                    <!-- Вопрос 3 -->
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>Сколько процедур нужно для видимого результата?</span>
@@ -744,8 +744,6 @@
                             <p>Обычно эффект заметен уже после 3–5 сеансов. Для стойкого результата рекомендуется курс из 10–12 процедур. Всё зависит от индивидуальных особенностей и целей – мы составляем план на первой консультации.</p>
                         </div>
                     </div>
-
-                    <!-- Вопрос 4 -->
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>Больно ли делать массаж?</span>
@@ -755,8 +753,6 @@
                             <p>Массаж не должен вызывать острую боль. Вы можете чувствовать приятное тепло, напряжение в прорабатываемых зонах, но это не боль. Мы всегда регулируем силу нажатия под ваши ощущения – вам должно быть комфортно.</p>
                         </div>
                     </div>
-
-                    <!-- Вопрос 5 -->
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>Как записаться на массаж?</span>
@@ -774,55 +770,33 @@
         <section class="section contacts-section" id="contacts">
             <div class="container">
                 <h2 class="section-title">Контакты</h2>
-                
                 <div class="contact-card">
                     <div class="contact-label">Адрес</div>
                     <div class="contact-value">г. Киров, ул. Никитская, д. 146</div>
                     <div class="contact-note">Вход с торца слева, домофон 5</div>
                     <div class="contact-hint">Работаю по предварительной записи</div>
                 </div>
-
                 <div class="social-card">
                     <div class="social-card-title">Связаться со мной</div>
-                    
                     <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="social-link">
                         <div class="social-icon">📸</div>
-                        <div>
-                            <div class="social-name">Instagram</div>
-                            <div class="social-username">@natamirmat</div>
-                        </div>
+                        <div><div class="social-name">Instagram</div><div class="social-username">@natamirmat</div></div>
                     </a>
-                    
                     <a href="https://vk.ru/id578712934" target="_blank" rel="noopener noreferrer" class="social-link">
                         <div class="social-icon">💬</div>
-                        <div>
-                            <div class="social-name">ВКонтакте</div>
-                            <div class="social-username">Наталия Мурадян</div>
-                        </div>
+                        <div><div class="social-name">ВКонтакте</div><div class="social-username">Наталья Мурадян</div></div>
                     </a>
                 </div>
-
                 <div class="map-container">
-                    <iframe 
-                        src="https://yandex.ru/map-widget/v1/?text=Киров%2C%20ул.%20Никитская%2C%20146&z=16" 
-                        width="100%" 
-                        height="300" 
-                        frameborder="0" 
-                        allowfullscreen="true" 
-                        style="border-radius: 16px; border: 1px solid #e8ddd0;">
-                    </iframe>
+                    <iframe src="https://yandex.ru/map-widget/v1/?text=Киров%2C%20ул.%20Никитская%2C%20146&z=16" width="100%" height="300" frameborder="0" allowfullscreen="true" style="border-radius:16px;border:1px solid #e8ddd0;"></iframe>
                 </div>
-                
                 <div class="contact-message">
-                    <p class="contact-message-text">
-                        Напишите мне в Instagram или ВКонтакте - договоримся об удобном времени 
-                        и отвечу на все вопросы 💕
-                    </p>
+                    <p class="contact-message-text">Напишите мне в Instagram или ВКонтакте - договоримся об удобном времени и отвечу на все вопросы 💕</p>
                 </div>
             </div>
         </section>
 
-        <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
+        <!-- CTA -->
         <section class="section cta-section">
             <div class="container">
                 <div class="cta-box">
@@ -842,18 +816,16 @@
             <a href="https://www.instagram.com/natamirmat" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Instagram">📸</a>
             <a href="https://vk.ru/id578712934" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ВКонтакте">💬</a>
         </div>
-        <div style="margin-top: 12px; font-size: 12px; color: #b8a99a;">
-            <a href="privacy.html" style="text-decoration: underline;">Политика конфиденциальности</a>
+        <div style="margin-top:12px;font-size:12px;color:#b8a99a;">
+            <a href="privacy.html" style="text-decoration:underline;">Политика конфиденциальности</a>
         </div>
         <div class="footer-copy">© 2026 КРАСИВА. Все права защищены.</div>
     </footer>
 
-    <!-- Мобильная кнопка записи -->
     <a href="#" class="mobile-cta js-open-modal">Записаться</a>
-
     <script src="script.js?v=5"></script>
 
-    <!-- Модальное окно записи -->
+    <!-- Модальное окно (оставляем как есть) -->
     <div class="modal-overlay" id="bookingModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
